@@ -1,0 +1,209 @@
+/*
+  tiro.legal — responsive
+  Cross-component media queries. Loaded last on every page.
+*/
+
+@media (max-width: 1120px) {
+  /* `1fr` defaults to `minmax(auto, 1fr)` and `auto` resolves to a
+     track's min-content. With long unbreakable strings (Turkish labels,
+     mono pills, table cells) the track stretches past the parent and
+     the page horizontally scrolls. `minmax(0, 1fr)` lets the track
+     shrink below intrinsic content width — text wraps instead. */
+  .about-shell,
+  .access,
+  .hw-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hw-copy {
+    position: static;
+    min-width: 0;
+  }
+
+  .exhibit,
+  .exhibit.flip {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .exhibit-copy,
+  .exhibit-art {
+    min-width: 0;
+  }
+
+  .exhibit.flip .exhibit-copy {
+    order: 1;
+  }
+
+  .exhibit.flip .exhibit-art {
+    order: 2;
+  }
+
+  .principles {
+    grid-template-columns: 1fr;
+  }
+
+  .principle {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .principle:last-child {
+    border-bottom: 0;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .topbar-inner {
+    grid-template-columns: auto 1fr auto auto;
+  }
+
+  .section-head.between {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --container: calc(100vw - 32px);
+  }
+
+  .topbar-inner {
+    grid-template-columns: auto 1fr auto;
+    height: 60px;
+  }
+
+  .topbar-cta {
+    display: none;
+  }
+
+  .brand-text small {
+    display: none;
+  }
+
+  .section {
+    padding-block: 64px;
+  }
+
+  .about-shell {
+    padding: 22px;
+  }
+
+  .about-story {
+    padding: 22px 18px 22px 24px;
+  }
+
+  .about-panel {
+    padding: 22px;
+  }
+
+  .about-panel-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  /* The chat-app mockup uses .app-shell (200px + 280px + 1fr grid)
+     and .app-cases / .app-panel as columns. Older selectors
+     (.app-body / .app-sidebar / .app-doc-panel) didn't match the
+     current HTML and the 3-column grid kept its desktop width on
+     phones, pushing the page horizontal scroll to ~422px. Collapse
+     to a single column and hide the decorative left sidebar. */
+  .app-shell,
+  .app-body {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .app-cases,
+  .app-sidebar,
+  .app-doc-panel {
+    display: none;
+  }
+
+  .app-chat {
+    padding: 16px;
+  }
+
+  .chain-row {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    gap: 12px;
+  }
+
+  .chain-status {
+    grid-column: 2;
+  }
+
+  /* "Sistemimi Kontrol Et" button overflowed mobile screens because
+     .btn defaults to white-space: nowrap + uppercase, which makes
+     the Turkish text wider than a 360px viewport's content column.
+     Allow the button to fill the column, wrap to two lines if it
+     must, and tighten horizontal padding so the arrow stays inside. */
+  .hw-actions .btn {
+    width: 100%;
+    white-space: normal;
+    line-height: 1.25;
+    height: auto;
+    min-height: 44px;
+    padding: 10px 16px;
+  }
+
+  /* 5-column hardware table can't be readable at 320–390px even with
+     tight padding — make the wrapper horizontally scrollable instead
+     of squishing each cell to ~60px. The wrapper border survives so
+     the user gets a clear "scroll inside this region" affordance. */
+  .hw-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .hw-table {
+    min-width: 480px;     /* keeps cells readable; user pans horizontally */
+  }
+
+  .hw-table th,
+  .hw-table td {
+    padding: 12px 12px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .form {
+    padding: 22px;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .footer-bottom {
+    margin-top: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal,
+  .reveal-children > * {
+    opacity: 1;
+    transform: none;
+  }
+}
