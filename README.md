@@ -75,3 +75,9 @@ python3 -m http.server 3000
 ```
 
 Sonra `http://localhost:3000`.
+
+## Yayın
+
+tiro.legal, GitHub Pages ile public `lycianapp/tiro-landing` reposundan yayınlanır.
+`main`'e `landing-page/` değişikliği push edilince `.github/workflows/landing.yml`
+klasörü oraya aynalar. `tiro-landing`'e elle commit atma; bir sonraki sync ezer.
