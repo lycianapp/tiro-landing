@@ -1,261 +1,219 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yerel LLM vs ChatGPT: Ceza avukatı için gerçek farklar — tiro</title>
-  <meta name="description"
-    content="Bilgisayarda çalışan yapay zeka ile ChatGPT/Claude arasındaki fark slogan değil — gizlilik, doğruluk, hız, maliyet boyutlarında somut karşılaştırma." />
-  <meta name="theme-color" content="#f8f6f2" />
-  <meta property="og:title" content="Yerel LLM vs ChatGPT: Ceza avukatı için gerçek farklar" />
-  <meta property="og:description" content="Gizlilik, doğruluk, hız, maliyet — 4 boyutta karşılaştırma." />
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://tiro.legal/blog/yerel-llm-vs-chatgpt.html" />
-  <meta property="article:published_time" content="2026-05-09" />
-  <meta property="og:image" content="https://tiro.legal/assets/og-image.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="tiro — Söz aramızda kalır." />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://tiro.legal/assets/og-image.jpg" />
-  <link rel="canonical" href="https://tiro.legal/blog/yerel-llm-vs-chatgpt.html" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
-    rel="stylesheet" />
-  <link rel="icon" type="image/svg+xml" href="../assets/favicon/favicon.svg" />
-  <link rel="icon" type="image/png" href="../assets/favicon/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/x-icon" href="../assets/favicon/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png" />
-  <link rel="manifest" href="../assets/favicon/site.webmanifest" />
-  <link rel="stylesheet" href="../css/base.css?v=20260715a" />
-  <link rel="stylesheet" href="../css/components.css?v=20260715a" />
-  <link rel="stylesheet" href="../css/layout.css?v=20260715a" />
-  <link rel="stylesheet" href="../css/pages/blog.css?v=20260715a" />
-  <link rel="stylesheet" href="../css/responsive.css?v=20260715a" />
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Yerel LLM vs ChatGPT: Ceza avukatı için gerçek farklar",
-    "datePublished": "2026-05-09",
-    "author": { "@type": "Organization", "name": "tiro" },
-    "publisher": {
-      "@type": "Organization",
-      "name": "tiro",
-      "logo": { "@type": "ImageObject", "url": "https://tiro.legal/assets/tiro_icon.svg" }
-    },
-    "mainEntityOfPage": "https://tiro.legal/blog/yerel-llm-vs-chatgpt.html",
-    "description": "Bilgisayarda çalışan yapay zeka ile ChatGPT/Claude arasındaki dört boyutlu karşılaştırma.",
-    "inLanguage": "tr-TR"
-  }
-  </script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yerel yapay zeka mı, ChatGPT mi? Ceza avukatı için farklar — tiro</title>
+<meta name="description" content="Bilgisayarda çalışan bir dil modeli ile ChatGPT gibi bulut servisleri; veri yolu, uydurma kaynak riski, internet ve donanım bakımından nasıl ayrışıyor?">
+<meta name="author" content="tiro">
+<meta property="article:published_time" content="2026-05-09">
+<meta property="article:modified_time" content="2026-09-24">
+<meta property="article:section" content="rehber">
+<!-- tiro:bas -->
+<link rel="canonical" href="https://tiro.legal/blog/yerel-llm-vs-chatgpt">
+<meta property="og:site_name" content="tiro">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Yerel yapay zeka mı, ChatGPT mi? Ceza avukatı için farklar">
+<meta property="og:description" content="Bilgisayarda çalışan bir dil modeli ile ChatGPT gibi bulut servisleri; veri yolu, uydurma kaynak riski, internet ve donanım bakımından nasıl ayrışıyor?">
+<meta property="og:url" content="https://tiro.legal/blog/yerel-llm-vs-chatgpt">
+<meta property="og:image" content="https://tiro.legal/assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Yerel yapay zeka mı, ChatGPT mi? Ceza avukatı için farklar","description":"Bilgisayarda çalışan bir dil modeli ile ChatGPT gibi bulut servisleri; veri yolu, uydurma kaynak riski, internet ve donanım bakımından nasıl ayrışıyor?","datePublished":"2026-05-09","dateModified":"2026-09-24","author":{"@type":"Organization","name":"tiro","url":"https://tiro.legal"},"publisher":{"@type":"Organization","name":"tiro","logo":{"@type":"ImageObject","url":"https://tiro.legal/assets/tiro_icon.svg"}},"image":"https://tiro.legal/assets/og-image.jpg","mainEntityOfPage":"https://tiro.legal/blog/yerel-llm-vs-chatgpt","articleSection":"Rehber","inLanguage":"tr-TR"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana sayfa","item":"https://tiro.legal/"},{"@type":"ListItem","position":2,"name":"Yazılar","item":"https://tiro.legal/blog/"},{"@type":"ListItem","position":3,"name":"Rehber","item":"https://tiro.legal/blog/rehber"},{"@type":"ListItem","position":4,"name":"Yerel yapay zeka mı, ChatGPT mi? Ceza avukatı için farklar","item":"https://tiro.legal/blog/yerel-llm-vs-chatgpt"}]}</script>
+<link rel="preload" href="/assets/fonts/source-serif-4-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/source-sans-3-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/site.css?v=c5646d07">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+<link rel="icon" href="/assets/favicon/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+<link rel="manifest" href="/assets/favicon/site.webmanifest">
+<link rel="alternate" type="application/rss+xml" title="tiro yazıları" href="/blog/rss.xml">
+<meta name="theme-color" content="#f7f5f0">
+<script src="/js/main.js?v=c5646d07" defer></script>
+<!-- /tiro:bas -->
 </head>
-
-<body>
-  <a href="#main" class="skip-link">Ana içeriğe atla</a>
-
-  <div class="site">
-    <header class="topbar">
-      <div class="container topbar-inner">
-        <a href="../index.html" class="brand" aria-label="tiro ana sayfa">
-          <img src="../assets/tiro_icon.svg" alt="" class="brand-logo" />
-          <span class="brand-text">
-            <strong class="brand-name">tiro</strong>
-            <small>tiro.legal</small>
-          </span>
-        </a>
-
-        <nav class="nav" aria-label="Ana gezinme">
-          <a href="/#urun">Ürün</a>
-          <a href="/#hakkimizda">Hakkımızda</a>
-          <a href="/#iletisim">İletişim</a>
-          <a href="../blog/" aria-current="page">Blog</a>
-        </nav>
-
-        <button type="button" class="nav-toggle" aria-controls="mobileNav" aria-expanded="false" aria-label="Menüyü aç">
-          <span class="nav-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span>
-        </button>
-        <a href="/#iletisim" class="btn btn-primary btn-compact topbar-cta">Erişim Talep Et</a>
-      </div>
-    </header>
-
-    <main id="main">
-      <article class="container">
-        <header class="post-hero reveal">
-          <div class="post-meta">
-            <span class="post-date">2026-05-09</span>
-            <span class="post-divider" aria-hidden="true"></span>
-            <span>5 dk okuma</span>
-            <span class="post-divider" aria-hidden="true"></span>
-            <span>Yazı serisi · 04</span>
-          </div>
-          <h1>Yerel LLM vs ChatGPT: Ceza avukatı için gerçek farklar.</h1>
-          <p class="post-lead">
-            "Yerel" ve "bulut" yapay zeka kelimeleri çok dolaşıyor. Ceza
-            avukatı için somut fark dört boyutta: gizlilik, doğruluk, hız,
-            maliyet. Sırayla bakalım.
-          </p>
-          <div class="post-tags">
-            <span class="blog-tag">Yerel AI</span>
-            <span class="blog-tag">Tiro</span>
-          </div>
-        </header>
-
-        <div class="prose reveal">
-          <p>
-            ChatGPT, Claude, Gemini — bunların hepsi <strong>bulut tabanlı</strong>.
-            Sorunuz ABD'deki bir sunucuda işleniyor, cevap geliyor. Llama,
-            Qwen, Mistral gibi açık ağırlıklı modeller ise <strong>kendi
-            bilgisayarınızda</strong> çalışabiliyor. Tek başlık altında değil,
-            mimari olarak farklı iki yapı.
-          </p>
-
-          <h2>1. Gizlilik</h2>
-
-          <p>
-            Bulut model: dosya internete yükleniyor; KVKK m. 9 anlamında yurt
-            dışına aktarım. Avukatlık Kanunu m. 36 meslek sırrı için riskli
-            zemin. Sağlayıcının veri saklama politikasına güvenmek gerekiyor.
-          </p>
-
-          <p>
-            Yerel model: dosya cihazdan çıkmıyor. KVKK m. 9 kapsamına
-            girmiyor. Meslek sırrı m. 36 ile çelişmiyor. <strong>Bu boyutta
-            tartışmasız fark</strong>.
-          </p>
-
-          <h2>2. Doğruluk ve halüsinasyon</h2>
-
-          <p>
-            Bulut frontier modeller (GPT-4, Claude) genel hukuk akıl yürütmesinde
-            güçlü; ancak kaynak göstermiyorlar. ChatGPT'nin uydurduğu emsal
-            kararlarla mahkemeye giden <strong>Mata v. Avianca davası</strong>
-            klasik örnek — sonuç para cezası ve mesleki itibar zararı.
-          </p>
-
-          <p>
-            Yerel model + RAG (kaynaktan üretim) yaklaşımıyla farklı çalışıyor:
-            cevap üretirken sizin yüklediğiniz dosyayı tarıyor, bulduğu cümleleri
-            işaretleyerek geri veriyor. Halüsinasyon riski yapısal olarak çok
-            düşük çünkü model "uydurmak" yerine "alıntı yapmak" zorunda.
-          </p>
-
-          <blockquote>
-            Genel sohbet asistanları kaynak göstermez. Hukuk işinde kaynak
-            gösterilmeyen cümle, var olmayan cümle gibidir.
-          </blockquote>
-
-          <h2>3. Hız</h2>
-
-          <p>
-            Bulut model: ağ gecikmesi + sunucu sırası. İnternet kesikse
-            çalışmıyor; mobil 4G zayıfsa cevap saniyelerce gecikiyor.
-          </p>
-
-          <p>
-            Yerel model (4-8 milyar parametre, modern dizüstü): ortalama 4-8
-            saniyede tam cevap. İnternete bağlı değil; uçakta, mahkeme
-            koridorunda, internetsiz bir kafede çalışıyor. Apple Silicon
-            (M1+) ve modern Windows (RTX 30/40 serisi, Intel Arc) bu boyutu
-            rahatça kaldırıyor.
-          </p>
-
-          <h2>4. Maliyet</h2>
-
-          <p>
-            Bulut: aylık abonelik (ChatGPT Plus 20$, kurumsal lisanslar
-            yüzlerce dolar). Sürekli ödeme, kullanılmasa da var. Yoğun bir
-            ofiste 5 avukat = 5 abonelik = aylık 100$+.
-          </p>
-
-          <p>
-            Yerel: tek seferlik kurulum. Donanım zaten var (laptop yetiyor).
-            Sürekli aylık abonelik yok; model güncellemesi geldiğinde
-            cihaza iniyor.
-          </p>
-
-          <h2>Hangi modelin avantajı sizin için baskın?</h2>
-
-          <p>
-            Tek doğru cevap yok ama ceza dosyasında hassas terazi belirgin:
-            gizlilik ve halüsinasyon riski terazinin yerel tarafına ağır basıyor.
-            Bulut modeli kalıp olarak hızlı görünebilir, ama internet ve KVKK
-            faktörü hesaba katıldığında pratik üstünlük tartışmalı.
-          </p>
-
-          <p>
-            tiro yerel tarafı seçti çünkü Türk ceza dosyası için <strong>diğer
-            tarafın faturası fazla yüksek</strong>: bir tek meslek sırrı
-            ihlali, kazanılan tüm zamandan değerli.
-          </p>
-
-          <p>
-            <a href="ai-meslek-sirri.html">"AI'a meslek sırrı emanet edilir mi?"</a>
-            yazısı bu hesabı detaylı yapıyor.
-          </p>
-        </div>
-
-        <footer class="post-footer">
-          <a href="index.html" class="post-back">Tüm yazılar</a>
-
-          <div class="post-cta">
-            <strong>tiro'yu kendi dosyanızda görmek ister misiniz?</strong>
-            <p>
-              Şu an kapalı beta. Kurulumu konuşarak yapıyoruz; nasıl çalıştığınızı
-              anlamak için kısa bir not bırakın, dönüş yapalım.
-            </p>
-            <div class="post-cta-actions">
-              <a href="https://calendly.com/lycianapp/30min" data-calendly target="_blank" rel="noopener" class="btn btn-primary btn-arrow">30 dk konuşalım</a>
-              <a href="/#urun" class="btn btn-ghost">Ürünü gör</a>
-            </div>
-          </div>
-        </footer>
-      </article>
-    </main>
-
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-inner">
-          <div class="footer-brand">
-            <img src="../assets/tiro_icon.svg" alt="" class="brand-logo" />
-            <small>ceza avukatları için · dosyanız sizinle kalsın diye</small>
-            <a class="footer-email" href="mailto:mustafa_arinmis@outlook.com">mustafa_arinmis@outlook.com</a>
-          </div>
-          <nav class="footer-nav" aria-label="Alt gezinme">
-            <a href="/#urun">Ürün</a>
-            <a href="/#hakkimizda">Hakkımızda</a>
-            <a href="../blog/" aria-current="page">Blog</a>
-            <a href="../sss.html">Sık sorulanlar</a>
-            <a href="/#iletisim">İletişim</a>
-          </nav>
-          <div class="footer-legal" aria-label="Yasal">
-            <a href="../kvkk.html">KVKK</a>
-            <a href="../kullanim-sartlari.html">Kullanım şartları</a>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <span class="footer-copy">© 2026 tiro.legal</span>
-          <span class="footer-badge">Yerel · Türkiye</span>
-        </div>
-      </div>
-    </footer>
+<body data-bolum="blog">
+<!-- tiro:ust -->
+<a class="atla" href="#icerik">İçeriğe geç</a>
+<header class="ust">
+  <div class="kap ust-ic">
+    <a class="marka" href="/" aria-label="tiro ana sayfa"><img src="/assets/tiro_icon.svg" alt="" width="26" height="26">tiro</a>
+    <nav class="menu" id="menu" aria-label="Ana menü">
+      <a href="/blog/" data-bolum="blog" aria-current="page">Yazılar</a>
+      <a href="/urun" data-bolum="urun">Ürün</a>
+      <a href="/gizlilik" data-bolum="gizlilik">Gizlilik</a>
+      <a href="/hakkimizda" data-bolum="hakkimizda">Hakkımızda</a>
+      <a href="/iletisim" data-bolum="iletisim">İletişim</a>
+    </nav>
+    <a class="dugme" href="/iletisim">Görüşme ayarla</a>
+    <button class="menu-ac" type="button" aria-controls="menu" aria-expanded="false">Menü</button>
   </div>
+</header>
+<!-- /tiro:ust -->
+<main id="icerik">
+<article class="kap dar yazi">
+<header class="yazi-bas">
+<!-- tiro:kunye -->
+<div class="kunye"><a href="/blog/rehber">Rehber</a><time datetime="2026-05-09">9 Mayıs 2026</time><span>tiro</span><span>5 dk okuma</span></div>
+<!-- /tiro:kunye -->
+<h1>Yerel yapay zeka mı, ChatGPT mi? Ceza avukatı için farklar</h1>
+<p class="yazi-ozet">İki yaklaşımı ceza dosyasıyla çalışan bir avukatın gözünden karşılaştırıyoruz: dosyanın izlediği yol, uydurma kaynak riski, internet bağımlılığı ve donanım.</p>
+</header>
+<div class="yazi-govde duzyazi">
+<p>
+  İki yaklaşım arasındaki asıl fark modelin ne kadar akıllı olduğunda değil, dosyanın nerede işlendiğinde. ChatGPT gibi bulut servisleri büyük modelleri sağlayıcının sunucularında çalıştırır; dosya o sunuculara gider. Yerel bir model avukatın kendi bilgisayarında çalışır; dosya cihazdan çıkmaz, buna karşılık modelin boyutu o bilgisayarın belleğiyle sınırlıdır. Ceza dosyasıyla çalışırken bizce ilk fark, ikincisinden daha ağır basıyor.
+</p>
 
-  <div id="mobileNav" class="mobile-nav" hidden>
-    <div class="mobile-nav-inner">
-      <a href="/#urun">Ürün</a>
-      <a href="/#hakkimizda">Hakkımızda</a>
-      <a href="/#iletisim">İletişim</a>
-      <a href="../blog/" aria-current="page">Blog</a>
-      <a href="https://calendly.com/lycianapp/30min" data-calendly target="_blank" rel="noopener" class="btn btn-primary btn-arrow">30 dk konuşalım</a>
+<p>
+  Konunun hukuki tarafını, yani Av. K. m. 36 ve KVKK m. 9 analizini, <a href="/blog/ai-meslek-sirri">“Yapay zekaya meslek sırrı emanet edilir mi?”</a> yazısında ayrıntılı ele aldık; burada yalnızca sonucunu kullanıyoruz.
+</p>
+
+<h2>“Yerel model” ve “bulut model” ne demek?</h2>
+
+<p>
+  ChatGPT, Claude ve Gemini, sağlayıcı şirketin sunucularında çalışan servislerdir. Avukat tarayıcıya ya da uygulamaya soruyu yazar, soru ve eklenen belgeler internet üzerinden sağlayıcıya gider, cevap oradan döner. Modelin kendisi hiçbir zaman kullanıcının bilgisayarına inmez.
+</p>
+
+<p>
+  Yerel modelde durum tersine döner. Bir dil modeli, eğitim sırasında öğrendiği milyarlarca sayısal değerden, yani “ağırlıklarından” oluşur. Bazı şirketler bu ağırlıkları indirilebilir olarak yayımlıyor: Meta’nın <a href="https://huggingface.co/meta-llama" rel="noopener">Llama</a>, Alibaba’nın <a href="https://huggingface.co/Qwen" rel="noopener">Qwen</a> ve <a href="https://huggingface.co/mistralai" rel="noopener">Mistral</a> modelleri bunun bilinen örnekleri. İndirilen model, uygun bir yazılımla doğrudan kişinin bilgisayarında çalıştırılabilir. Soru da cevap da o cihazın içinde kalır.
+</p>
+
+<h2>Dosya hangi yoldan geçiyor?</h2>
+
+<p>
+  Bulut serviste dosya sağlayıcının sunucusuna gider ve orada sağlayıcının kurallarına göre işlenip saklanır. ChatGPT örneğinde OpenAI’nin Türkiye’yi de kapsayan <a href="https://openai.com/policies/row-privacy-policy/" rel="noopener">gizlilik politikası</a>, verilerin ABD’deki sunucular da dahil olmak üzere farklı ülkelerde işlendiğini söylüyor. Bireysel hesaplarda içerik, kullanıcı ayarı kapatmadıkça model eğitiminde kullanılabiliyor; kurumsal planlarda ve API’de <a href="https://openai.com/enterprise-privacy/" rel="noopener">varsayılan olarak kullanılmıyor</a>. Her iki durumda da dosya yurt dışına çıkmış oluyor.
+</p>
+
+<p>
+  Kimliği belirlenebilir kişilere ait veri içeren bir ceza dosyası için bu, KVKK m. 9’daki yurt dışına aktarım kurallarının devreye girmesi demek. Türkiye Barolar Birliği’nin Ağustos 2026’da yayımladığı <a href="https://d.barobirlik.org.tr/2026/yapayzekatavsiyerehberi.pdf" rel="noopener">yapay zeka rehberi</a> de ceza dosyalarında “açık sistem niteliğindeki yapay zekâ araçları kullanılmamalıdır” diyor ve mümkün olduğunda “kapalı veya yerel (on-premise) çalışan” sistemlerin seçilmesini öneriyor.
+</p>
+
+<p>
+  Yerel modelde dosya bilgisayardan çıkmadığı için aktarım sorusu doğmaz. Sorumluluk ise ortadan kalkmaz, yer değiştirir: verinin güvenliği artık o bilgisayarın güvenliğine bağlıdır. Disk şifreleme kapalı, ekran kilidi olmayan, ailece kullanılan bir dizüstünde yerel model de iyi bir çözüm sayılmaz.
+</p>
+
+<h2>Hangisi daha az uydurur?</h2>
+
+<p>
+  Bu sorunun en çok bilinen örneği ABD’den. New York Güney Bölgesi Federal Mahkemesi’ndeki <a href="https://www.ctd.uscourts.gov/sites/default/files/Mata-v.-Avianca.pdf" rel="noopener"><em>Mata v. Avianca</em></a> davasında davacı avukatları, ChatGPT’nin ürettiği ve gerçekte var olmayan altı kararı dilekçelerinde emsal olarak gösterdi. Mahkemenin tespitine göre avukatlardan biri, kararların gerçek olup olmadığını yine ChatGPT’ye sormuş; ChatGPT de bunların Westlaw ve LexisNexis’te bulunabilecek “gerçek” kararlar olduğunu söylemişti. Avukatlar, mahkeme kararların varlığını sorguladıktan sonra da bir süre arkalarında durdu.
+</p>
+
+<p>
+  Hâkim P. Kevin Castel, 22 Haziran 2023 tarihli kararında avukatlara ve bürolarına müteselsilen 5.000 dolar para cezası verdi. Ayrıca müvekkile ve uydurma kararların yazarı olarak adı geçen her hâkime, kararın bir örneğini içeren birer mektup gönderilmesine hükmetti. Kararın ilk paragrafı, meselenin araç değil özen olduğunu açıkça söylüyor: “there is nothing inherently improper about using a reliable artificial intelligence tool for assistance”, yani güvenilir bir yapay zeka aracından yardım almakta özünde yanlış bir şey yok; ama dosyaya girenin doğruluğunu denetleme görevi avukatta.
+</p>
+
+<p>
+  Buradan çıkan ders yerel ile bulut arasındaki farkla doğrudan ilgili değil. Uydurma riski, modelin cevabını neye dayandırdığıyla ilgili. Genel bir sohbet asistanı soruyu eğitimde öğrendiklerinden cevaplar; kaynak göstermesi istenirse, var olmayan bir kaynağı da aynı akıcılıkla yazabilir. Cevabı yalnızca önündeki belgeden üretmeye ve her cümlenin hangi sayfadan geldiğini göstermeye zorlanan bir sistemde ise yanlış bir cümle, kaynağına tıklandığında hemen ortaya çıkar. Bu yöntem, belgedeki ilgili pasajları bulup modele onlarla cevap ürettirdiği için “kaynaktan getirerek üretim” (İngilizce kısaltmasıyla RAG) olarak anılıyor.
+</p>
+
+<p>
+  TBB rehberi de hassas dosyalarda bu yaklaşımı öneriyor: müvekkil verisini modele “eğitim verisi” olarak vermek yerine, “veriyi büro denetimindeki kapalı bir bilgi deposunda tutup sorgu anında getiren (RAG benzeri) yaklaşımlar tercih edilir.” Bu yöntem bulut servislerde de kullanılabiliyor; yerel modele özgü değil. Uydurmayı da tümüyle ortadan kaldırmıyor, yalnızca yakalamayı kolaylaştırıyor. Rehberin ifadesiyle avukat, yapay zekadan aldığı hiçbir mevzuat hükmünü, içtihadı veya maddi vakıayı “resmî ve güvenilir kaynaktan teyit etmeden” mahkemeye sunamaz.
+</p>
+
+<h2>İnternet kesildiğinde ne olur?</h2>
+
+<p>
+  Bulut servis internet olmadan çalışmaz; bağlantı zayıfsa cevap da gecikir. Duruşma arasında adliyede, zayıf bir mobil bağlantıyla dosyaya bakmak isteyen avukat için bu gündelik bir sorun.
+</p>
+
+<p>
+  Yerel model bağlantıya ihtiyaç duymaz. İnternet yalnızca modeli ve yazılımı ilk kez indirirken, sonra da güncelleme alırken gerekir. Bunun bir bedeli var: bulut servisler modellerini sürekli ve kullanıcıya bir şey yaptırmadan yeniler, yerel modelde güncelleme indirilip kurulana kadar eski sürüm çalışmaya devam eder.
+</p>
+
+<h2>Bilgisayarım yeter mi?</h2>
+
+<p>
+  Yerel modelin gerçek sınırı burada. Bir modelin çalışabilmesi için ağırlıklarının bilgisayarın belleğine sığması gerekir. Veri merkezlerinde çalışan en büyük modeller sıradan bir dizüstüne sığmaz; bilgisayarda çalışan model daha küçüktür. Bizce bu fark en çok, dosya dışında kalan genel sohbette ve geniş hukuki akıl yürütmede hissedilir. Belirli bir dosyayı okuyup olayları sıralamak, ifadeleri karşılaştırmak ve cevabı kaynağıyla vermek gibi sınırlı görevlerde küçük bir modelin, o işe göre ayarlanması şartıyla, yeterli olabileceğini düşünüyoruz.
+</p>
+
+<p>
+  tiro’yu bu takası bilerek yerel tarafta kurduk. Ceza dosyası için eğittiğimiz model avukatın bilgisayarında çalışıyor ve bilgisayarın gücüne göre dört profilden biri seçiliyor. <a href="/urun">Ürün sayfasındaki</a> tabloya göre en hafif profil 2,5 GB’lık bir model kullanıyor ve en az 6 GB bellek istiyor; en güçlü profilde model 22 GB, önerilen bellek 48 GB. macOS’ta Apple Silicon öneriliyor, Windows’ta Vulkan sürücüleriyle geniş donanım desteği var; telefonda çalışmıyor.
+</p>
+
+<h2>Yan yana bakınca</h2>
+
+<table>
+  <thead>
+    <tr><th></th><th>Bulut servis (ör. ChatGPT)</th><th>Bilgisayarda çalışan model</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Dosyanın işlendiği yer</td><td>Sağlayıcının sunucuları, çoğunlukla yurt dışında</td><td>Avukatın kendi bilgisayarı</td></tr>
+    <tr><td>KVKK m. 9 yurt dışı aktarım</td><td>Kişisel veri içeriyorsa gündeme gelir</td><td>Aktarım olmadığı için gündeme gelmez</td></tr>
+    <tr><td>Veri güvenliğinin dayandığı yer</td><td>Sağlayıcının politikası ve sözleşme</td><td>Bilgisayarın güvenliği (disk şifreleme, ekran kilidi)</td></tr>
+    <tr><td>Model boyutu</td><td>Büyük, sağlayıcının donanımıyla sınırlı</td><td>Daha küçük, bilgisayarın belleğiyle sınırlı</td></tr>
+    <tr><td>İnternet</td><td>Her soruda gerekir</td><td>Kurulum ve güncelleme dışında gerekmez</td></tr>
+    <tr><td>Uydurma kaynak riski</td><td>Kullanım biçimine bağlı; her iki yapıda da cevabın belgeye bağlanması ve teyit gerekir</td><td>Aynı</td></tr>
+    <tr><td>Ücretlendirme</td><td>Ücretsiz plan ve aylık ücretli planlar (<a href="https://chatgpt.com/pricing" rel="noopener">ChatGPT fiyatları</a>)</td><td>Sağlayıcıya sorgu başına ödeme yok; maliyet donanımda ve kullanılan yazılımda</td></tr>
+  </tbody>
+</table>
+
+<h2>Hangi iş için hangisi?</h2>
+
+<p>
+  Ayrım, işin içinde müvekkil verisi olup olmamasıyla yapılabilir. Bir kanun maddesinin genel çerçevesini anlamak, kimliği belirlenemeyen bir konu için taslak bir plan çıkarmak ya da kamuya açık bir metni sadeleştirmek gibi işlerde bulut servislerin gücünden yararlanmak mümkün. TBB rehberi de genel mevzuat araştırması ve anonim konu planlamasını düşük riskli kullanımlar arasında sayıyor. İddianame, ifade tutanağı, bilirkişi raporu gibi dosya evrakı söz konusu olduğunda ise tercih, dosyanın bilgisayardan çıkıp çıkmayacağı sorusuna dönüşüyor.
+</p>
+
+<p>
+  Bu karşılaştırmada tek bir kazanan yok. Bulut servisler daha büyük modeller sunuyor, bakım gerektirmiyor ve her yerden erişilebiliyor. Yerel model daha küçük ve bilgisayara bağımlı, ama ceza dosyasını avukatın denetiminden çıkarmıyor. Meslek sırrı ve özel nitelikli kişisel verinin yoğun olduğu bir alanda bizce belirleyici olan ikincisi; hangi işin hangi araçla yapılacağına ise her büronun kendi dosya pratiğine bakarak karar vermesi gerekiyor.
+</p>
+</div>
+<!-- tiro:yazi-son -->
+<footer class="yazi-son">
+<p class="not">Son güncelleme: <time datetime="2026-09-24">24 Eylül 2026</time></p><p class="not">Bu yazı genel bilgilendirme amaçlıdır, hukuki mütalaa veya tavsiye yerine geçmez.</p>
+<div class="kutu"><strong>tiro’yu kendi dosyanızda görün</strong><p>Ceza dosyasını bilgisayarınızda okuyan, cevaplarında dayandığı belgeyi ve satırı belirten yapay zeka. Kapalı beta sürecinde kurulumu birlikte yapıyoruz.</p><a class="dugme" href="/iletisim">Görüşme ayarla</a></div>
+<h2>Diğer yazılar</h2>
+<ul class="satirlar">
+<li class="satir"><div class="kunye"><a href="/blog/rehber">Rehber</a><time datetime="2026-05-09">9 Mayıs 2026</time><span>7 dk okuma</span></div><h3><a href="/blog/ai-meslek-sirri">Yapay zekaya meslek sırrı emanet edilir mi?</a></h3><p>Ceza dosyasını ChatGPT gibi bir bulut aracına yüklemek Av. K. m. 36, KVKK m. 6 ve m. 9 bakımından ne anlama gelir? Yerel çalışan modelde ne değişir?</p></li>
+<li class="satir"><div class="kunye"><a href="/blog/rehber">Rehber</a><time datetime="2026-05-09">9 Mayıs 2026</time><span>5 dk okuma</span></div><h3><a href="/blog/ceza-avukatinin-is-yuku">Ceza avukatının iş yükü: 2025 adalet istatistikleri ne gösteriyor?</a></h3><p>Adalet Bakanlığının 2025 verileriyle avukat sayısı, savcılık ve ceza mahkemesi dosya yükü, görülme süreleri ve iade edilen iddianameler.</p></li>
+<li class="satir"><div class="kunye"><a href="/blog/rehber">Rehber</a><time datetime="2026-05-09">9 Mayıs 2026</time><span>8 dk okuma</span></div><h3><a href="/blog/ceza-dosyasi-lifecycle">Ceza dosyası nasıl yürür? Soruşturmadan hükme savunma rehberi</a></h3><p>Soruşturma, iddianame, duruşma, hüküm ve kanun yolu: her aşamada müdafinin dayandığı CMK maddeleri, uyulması gereken süreler ve yazılan dilekçeler.</p></li>
+</ul>
+</footer>
+<!-- /tiro:yazi-son -->
+</article>
+</main>
+<!-- tiro:alt -->
+<footer class="alt">
+  <div class="kap">
+    <div class="alt-ic">
+      <div class="alt-marka">
+        <a class="marka" href="/"><img src="/assets/tiro_icon.svg" alt="" width="26" height="26">tiro</a>
+        <p>Ceza avukatları için bilgisayarda çalışan yapay zeka. Hukukta yapay zeka ve veri gizliliği üzerine yazılar.</p>
+      </div>
+      <div>
+        <h2>Yazılar</h2>
+        <ul>
+          <li><a href="/blog/gundem">Gündem</a></li>
+          <li><a href="/blog/rehber">Rehber</a></li>
+          <li><a href="/blog/urun-notlari">Ürün notları</a></li>
+          <li><a href="/blog/rss.xml">RSS</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Ürün</h2>
+        <ul>
+          <li><a href="/urun">Nasıl çalışır</a></li>
+          <li><a href="/gizlilik">Gizlilik</a></li>
+          <li><a href="/sss">Sık sorulanlar</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>tiro</h2>
+        <ul>
+          <li><a href="/hakkimizda">Hakkımızda</a></li>
+          <li><a href="/iletisim">İletişim</a></li>
+          <li><a href="/kvkk">KVKK aydınlatma metni</a></li>
+          <li><a href="/kullanim-sartlari">Kullanım şartları</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="alt-yasal">
+      <p>tiro bir hukuk bürosu değildir. Bu sitedeki yazılar genel bilgilendirme amaçlıdır, hukuki mütalaa veya tavsiye yerine geçmez.</p>
+      <span>© 2026 tiro.legal</span>
     </div>
   </div>
-
-  <script src="../js/main.js?v=20260715a"></script>
+</footer>
+<!-- /tiro:alt -->
 </body>
-
 </html>

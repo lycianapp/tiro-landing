@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tiro yazıları</title>
+    <link>https://tiro.legal/blog/</link>
+    <atom:link href="https://tiro.legal/blog/rss.xml" rel="self" type="application/rss+xml"/>
+    <description>Hukukta yapay zeka, veri gizliliği ve ceza avukatlığı pratiği üzerine yazılar.</description>
+    <language>tr-TR</language>
+    <lastBuildDate>Thu, 24 Sep 2026 06:00:00 GMT</lastBuildDate>
+    <item>
+      <title>TBB’nin yapay zeka rehberi ceza dosyaları için ne diyor?</title>
+      <link>https://tiro.legal/blog/tbb-yapay-zeka-rehberi-ceza-dosyasi</link>
+      <guid>https://tiro.legal/blog/tbb-yapay-zeka-rehberi-ceza-dosyasi</guid>
+      <pubDate>Thu, 24 Sep 2026 06:00:00 GMT</pubDate>
+      <category>Gündem</category>
+      <description>TBB’nin 28 Ağustos 2026’da yayımladığı yapay zeka rehberi, ceza dosyalarını yüksek hassasiyetli sayıyor ve açık sistem araçları bu dosyaların dışında tutuyor.</description>
+    </item>
+    <item>
+      <title>Yapay zekaya meslek sırrı emanet edilir mi?</title>
+      <link>https://tiro.legal/blog/ai-meslek-sirri</link>
+      <guid>https://tiro.legal/blog/ai-meslek-sirri</guid>
+      <pubDate>Sat, 09 May 2026 06:00:00 GMT</pubDate>
+      <category>Rehber</category>
+      <description>Ceza dosyasını ChatGPT gibi bir bulut aracına yüklemek Av. K. m. 36, KVKK m. 6 ve m. 9 bakımından ne anlama gelir? Yerel çalışan modelde ne değişir?</description>
+    </item>
+    <item>
+      <title>Ceza avukatının iş yükü: 2025 adalet istatistikleri ne gösteriyor?</title>
+      <link>https://tiro.legal/blog/ceza-avukatinin-is-yuku</link>
+      <guid>https://tiro.legal/blog/ceza-avukatinin-is-yuku</guid>
+      <pubDate>Sat, 09 May 2026 06:00:00 GMT</pubDate>
+      <category>Rehber</category>
+      <description>Adalet Bakanlığının 2025 verileriyle avukat sayısı, savcılık ve ceza mahkemesi dosya yükü, görülme süreleri ve iade edilen iddianameler.</description>
+    </item>
+    <item>
+      <title>Ceza dosyası nasıl yürür? Soruşturmadan hükme savunma rehberi</title>
+      <link>https://tiro.legal/blog/ceza-dosyasi-lifecycle</link>
+      <guid>https://tiro.legal/blog/ceza-dosyasi-lifecycle</guid>
+      <pubDate>Sat, 09 May 2026 06:00:00 GMT</pubDate>
+      <category>Rehber</category>
+      <description>Soruşturma, iddianame, duruşma, hüküm ve kanun yolu: her aşamada müdafinin dayandığı CMK maddeleri, uyulması gereken süreler ve yazılan dilekçeler.</description>
+    </item>
+    <item>
+      <title>Uyuşturucu suçlarında etkin pişmanlık (TCK m. 192) nasıl uygulanır?</title>
+      <link>https://tiro.legal/blog/etkin-pismanlik-tck-192</link>
+      <guid>https://tiro.legal/blog/etkin-pismanlik-tck-192</guid>
+      <pubDate>Sat, 09 May 2026 06:00:00 GMT</pubDate>
+      <category>Rehber</category>
+      <description>TCK m. 192’deki cezasızlık ve indirim hâlleri, haber alınma anının önemi ve Yargıtay Ceza Genel Kurulunun 192/3 için aradığı şartlar, kararlarıyla.</description>
+    </item>
+    <item>
+      <title>tiro neden var?</title>
+      <link>https://tiro.legal/blog/merhaba</link>
+      <guid>https://tiro.legal/blog/merhaba</guid>
+      <pubDate>Sat, 09 May 2026 06:00:00 GMT</pubDate>
+      <category>Ürün notları</category>
+      <description>tiro’yu neden kurduk: ceza avukatının dosya içinde aramaya harcadığı zamanı, dosyayı bilgisayardan çıkarmadan kısaltmak. Neyi yapıyor, neyi yapmıyoruz.</description>
+    </item>
+    <item>
+      <title>Kendi modelimizi neden eğitiyoruz?</title>
+      <link>https://tiro.legal/blog/neden-kendi-modelimiz</link>
+      <guid>https://tiro.legal/blog/neden-kendi-modelimiz</guid>
+      <pubDate>Sat, 09 May 2026 06:00:00 GMT</pubDate>
+      <category>Ürün notları</category>
+      <description>Genel sohbet asistanları Türk ceza dosyasında nerede zorlanıyor, kendi modelimizi neden eğitip bilgisayarınızda çalıştırıyoruz ve bunun bedeli ne?</description>
+    </item>
+    <item>
+      <title>UDF dosyası nedir, UYAP Editör’de nasıl çalışılır?</title>
+      <link>https://tiro.legal/blog/udf-dosyasinda-calismak</link>
+      <guid>https://tiro.legal/blog/udf-dosyasinda-calismak</guid>
+      <pubDate>Sat, 09 May 2026 06:00:00 GMT</pubDate>
+      <category>Rehber</category>
+      <description>UDF nedir, UYAP Editör nereden indirilir, imzalı belgede değişiklik neden imzayı düşürür, UDF nasıl PDF’e çevrilir? Resmi kaynaklara dayalı rehber.</description>
+    </item>
+    <item>
+      <title>Yerel yapay zeka mı, ChatGPT mi? Ceza avukatı için farklar</title>
+      <link>https://tiro.legal/blog/yerel-llm-vs-chatgpt</link>
+      <guid>https://tiro.legal/blog/yerel-llm-vs-chatgpt</guid>
+      <pubDate>Sat, 09 May 2026 06:00:00 GMT</pubDate>
+      <category>Rehber</category>
+      <description>Bilgisayarda çalışan bir dil modeli ile ChatGPT gibi bulut servisleri; veri yolu, uydurma kaynak riski, internet ve donanım bakımından nasıl ayrışıyor?</description>
+    </item>
+  </channel>
+</rss>

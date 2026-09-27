@@ -1,300 +1,154 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sık Sorulanlar — tiro</title>
-  <meta name="description"
-    content="Fiyat, donanım, gizlilik, UDF/UYAP uyumu — tiro hakkında sık sorulan sorular ve net cevaplar." />
-  <meta name="theme-color" content="#f8f6f2" />
-  <meta property="og:title" content="Sık Sorulanlar — tiro" />
-  <meta property="og:description" content="tiro hakkında en sık sorulanlar." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://tiro.legal/sss.html" />
-  <meta property="og:image" content="https://tiro.legal/assets/og-image.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="tiro — Söz aramızda kalır." />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://tiro.legal/assets/og-image.jpg" />
-  <link rel="canonical" href="https://tiro.legal/sss.html" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
-    rel="stylesheet" />
-  <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg" />
-  <link rel="icon" type="image/png" href="assets/favicon/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
-  <link rel="manifest" href="assets/favicon/site.webmanifest" />
-  <link rel="stylesheet" href="css/base.css?v=20260715a" />
-  <link rel="stylesheet" href="css/components.css?v=20260715a" />
-  <link rel="stylesheet" href="css/layout.css?v=20260715a" />
-  <link rel="stylesheet" href="css/pages/blog.css?v=20260715a" />
-  <link rel="stylesheet" href="css/pages/faq.css?v=20260715a" />
-  <link rel="stylesheet" href="css/responsive.css?v=20260715a" />
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Fiyatı ne kadar?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "tiro şu an kapalı beta. Fiyat ve ticari şartları ilk görüşmede şeffaf konuşuyoruz; çünkü kurulumu konuşarak yapıyor, ihtiyaca göre uyarlıyoruz."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Hangi bilgisayarda çalışır?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "MacBook (Apple Silicon önerilir) ve modern Windows bilgisayarlarında çalışır. tiro 4 farklı profilde gelir; en hafif 6 GB RAM ile, en güçlü 32 GB RAM ile."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "İnternetsiz çalışıyor mu?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Evet. Yapay zeka modeli kendi bilgisayarınızda çalışıyor. Dosya yüklemek, soru sormak, savunma yazmak — internet bağlantısı gerekmiyor."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Veriler nereye gidiyor?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Hiçbir yere. Dosya, taslak savunma ve aldığınız cevaplar — hepsi bilgisayarınızda kalır. tiro bulut sunucusu kullanmaz, üçüncü taraf API çağırmaz."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "UDF dosyası açıyor mu?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Evet. UYAP'tan indirdiğiniz UDF dosyalarını açar, indeksler ve UYAP'a yüklenmeye hazır UDF olarak dışa aktarır."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Modeli nasıl güncelliyorsunuz?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Türk hukuk mevzuatı ve dosya yapısı değiştikçe modeli yeniden eğitip dağıtıyoruz. Güncelleme isteğe bağlı."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Test edebilir miyim?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Beta sürecinde her başvuruyla teker teker konuşuyoruz. Görüşmede bilgisayarınıza uygun profili seçiyor, kurulum yapıyor ve ilk dosyanızı birlikte açıyoruz."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "tiro avukat yerine geçer mi?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Hayır. tiro asistandır. Dosyayı okur, olayları kronolojiye dizer, kaynağı koyar; kararı, savunmayı ve hukuki kanaati avukat verir."
-        }
-      }
-    ]
-  }
-  </script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sık sorulanlar — tiro</title>
+<meta name="description" content="tiro’nun fiyatı, donanım ihtiyacı, internetsiz çalışması, verilerin nerede kaldığı ve UDF desteği üzerine kısa cevaplar.">
+<!-- tiro:bas -->
+<link rel="canonical" href="https://tiro.legal/sss">
+<meta property="og:site_name" content="tiro">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sık sorulanlar">
+<meta property="og:description" content="tiro’nun fiyatı, donanım ihtiyacı, internetsiz çalışması, verilerin nerede kaldığı ve UDF desteği üzerine kısa cevaplar.">
+<meta property="og:url" content="https://tiro.legal/sss">
+<meta property="og:image" content="https://tiro.legal/assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="/assets/fonts/source-serif-4-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/source-sans-3-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/site.css?v=c5646d07">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+<link rel="icon" href="/assets/favicon/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+<link rel="manifest" href="/assets/favicon/site.webmanifest">
+<link rel="alternate" type="application/rss+xml" title="tiro yazıları" href="/blog/rss.xml">
+<meta name="theme-color" content="#f7f5f0">
+<script src="/js/main.js?v=c5646d07" defer></script>
+<!-- /tiro:bas -->
 </head>
-
-<body>
-  <a href="#main" class="skip-link">Ana içeriğe atla</a>
-
-  <div class="site">
-    <header class="topbar">
-      <div class="container topbar-inner">
-        <a href="index.html" class="brand" aria-label="tiro ana sayfa">
-          <img src="assets/tiro_icon.svg" alt="" class="brand-logo" />
-          <span class="brand-text">
-            <strong class="brand-name">tiro</strong>
-            <small>tiro.legal</small>
-          </span>
-        </a>
-
-        <nav class="nav" aria-label="Ana gezinme">
-          <a href="#urun">Ürün</a>
-          <a href="#hakkimizda">Hakkımızda</a>
-          <a href="#iletisim">İletişim</a>
-          <a href="blog/">Blog</a>
-        </nav>
-
-        <button type="button" class="nav-toggle" aria-controls="mobileNav" aria-expanded="false" aria-label="Menüyü aç">
-          <span class="nav-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span>
-        </button>
-        <a href="#iletisim" class="btn btn-primary btn-compact topbar-cta">Erişim Talep Et</a>
-      </div>
-    </header>
-
-    <main id="main">
-      <div class="container">
-        <section class="blog-head reveal">
-          <span class="label label-accent"><span class="label-dot"></span>Sık sorulanlar</span>
-          <h1>Net cevaplar.</h1>
-          <p>
-            Fiyat, donanım, gizlilik ve iş akışı üzerine en sık sorulan sorular. Cevap
-            bulamadığınızı <a href="#iletisim" style="color: var(--primary-bright); border-bottom: 1px solid var(--primary-line);">iletişim sayfasından</a>
-            yazabilirsiniz.
-          </p>
-        </section>
-
-        <section class="faq-list reveal-children" aria-label="Sık sorulan sorular">
-
-          <details class="faq-item">
-            <summary>Fiyatı ne kadar?</summary>
-            <div class="faq-answer">
-              <p>
-                tiro şu an kapalı beta. Fiyat ve ticari şartları ilk görüşmede şeffaf
-                konuşuyoruz; çünkü kurulumu konuşarak yapıyor, ihtiyaca göre uyarlıyoruz.
-                <a href="#iletisim">Erken erişim talep edin</a>, dönüş yapalım.
-              </p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary>Hangi bilgisayarda çalışır?</summary>
-            <div class="faq-answer">
-              <p>
-                MacBook (Apple Silicon önerilir) ve modern Windows bilgisayarlarında çalışır.
-                tiro 4 farklı profilde gelir; en hafif 6 GB RAM ile, en güçlü 32 GB RAM ile.
-                <a href="#hardware">Donanım uyumluluğu</a>
-                tablosundan bilgisayarınız için uygun profili görebilirsiniz.
-              </p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary>İnternetsiz çalışıyor mu?</summary>
-            <div class="faq-answer">
-              <p>
-                Evet. Yapay zeka modeli kendi bilgisayarınızda çalışıyor. Dosya yüklemek,
-                soru sormak, savunma yazmak — internet bağlantısı gerekmiyor. İlk kurulum
-                ve isteğe bağlı güncellemeler dışında hiçbir aşamada internete ihtiyaç yok.
-              </p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary>Veriler nereye gidiyor?</summary>
-            <div class="faq-answer">
-              <p>
-                Hiçbir yere. Dosya, taslak savunma ve aldığınız cevaplar — hepsi
-                bilgisayarınızda kalır. tiro bulut sunucusu kullanmaz, üçüncü taraf API
-                çağırmaz. KVKK ve meslek sırrı açısından en başta verilmiş bir karar.
-              </p>
-              <p>
-                Ayrıntı: <a href="kvkk.html">KVKK aydınlatma metni</a>.
-              </p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary>UDF dosyası açıyor mu?</summary>
-            <div class="faq-answer">
-              <p>
-                Evet. UYAP'tan indirdiğiniz UDF dosyalarını orijinal haliyle açar, içeriklerini
-                indeksler ve çapraz referans alır. Yazdığınız savunma taslağını da yeniden
-                <strong>UYAP'a yüklenmeye hazır UDF</strong> olarak dışa aktarır.
-              </p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary>Modeli nasıl güncelliyorsunuz?</summary>
-            <div class="faq-answer">
-              <p>
-                Yapay zeka modelimizi düzenli olarak — Türk hukuk mevzuatı ve dosya yapısı
-                değiştikçe — yeniden eğitiyor ve dağıtıyoruz. Güncelleme isteğe bağlı; siz
-                onay verdiğinizde yeni model bilgisayarınıza iner. Eski modelle çalışmaya
-                devam etme hakkınız her zaman saklıdır.
-              </p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary>Test edebilir miyim?</summary>
-            <div class="faq-answer">
-              <p>
-                Beta sürecinde her başvuruyla teker teker konuşuyoruz. Görüşmede
-                bilgisayarınıza uygun profili seçiyor, kurulum yapıyor ve ilk dosyanızı
-                birlikte açıyoruz.
-                <a href="#iletisim">Başvuru</a> bırakın, dönüş yapalım.
-              </p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary>tiro avukat yerine geçer mi?</summary>
-            <div class="faq-answer">
-              <p>
-                Hayır. tiro <strong>asistan</strong>dır. Dosyayı okur, olayları kronolojiye dizer,
-                kaynağı koyar; kararı, savunmayı ve hukuki kanaati avukat verir. Mahkeme
-                önündeki son söz her zaman avukatındır. Bu sınırı baştan koyduk; ürün de
-                bu felsefeyle kuruldu.
-              </p>
-              <p>
-                Hikayemiz bu sınırın üzerine kuruluydu —
-                <a href="#hakkimizda">hakkımızda sayfasında</a> Cicero'nun yanındaki
-                Tiro'dan bahsediyoruz.
-              </p>
-            </div>
-          </details>
-
-        </section>
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-inner">
-          <div class="footer-brand">
-            <img src="assets/tiro_icon.svg" alt="" class="brand-logo" />
-            <small>ceza avukatları için · dosyanız sizinle kalsın diye</small>
-            <a class="footer-email" href="mailto:mustafa_arinmis@outlook.com">mustafa_arinmis@outlook.com</a>
-          </div>
-          <nav class="footer-nav" aria-label="Alt gezinme">
-            <a href="#urun">Ürün</a>
-            <a href="#hakkimizda">Hakkımızda</a>
-            <a href="blog/">Blog</a>
-            <a href="sss.html" aria-current="page">Sık sorulanlar</a>
-            <a href="#iletisim">İletişim</a>
-          </nav>
-          <div class="footer-legal" aria-label="Yasal">
-            <a href="kvkk.html">KVKK</a>
-            <a href="kullanim-sartlari.html">Kullanım şartları</a>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <span class="footer-copy">© 2026 tiro.legal</span>
-          <span class="footer-badge">Yerel · Türkiye</span>
-        </div>
-      </div>
-    </footer>
+<body data-bolum="">
+<!-- tiro:ust -->
+<a class="atla" href="#icerik">İçeriğe geç</a>
+<header class="ust">
+  <div class="kap ust-ic">
+    <a class="marka" href="/" aria-label="tiro ana sayfa"><img src="/assets/tiro_icon.svg" alt="" width="26" height="26">tiro</a>
+    <nav class="menu" id="menu" aria-label="Ana menü">
+      <a href="/blog/" data-bolum="blog">Yazılar</a>
+      <a href="/urun" data-bolum="urun">Ürün</a>
+      <a href="/gizlilik" data-bolum="gizlilik">Gizlilik</a>
+      <a href="/hakkimizda" data-bolum="hakkimizda">Hakkımızda</a>
+      <a href="/iletisim" data-bolum="iletisim">İletişim</a>
+    </nav>
+    <a class="dugme" href="/iletisim">Görüşme ayarla</a>
+    <button class="menu-ac" type="button" aria-controls="menu" aria-expanded="false">Menü</button>
   </div>
+</header>
+<!-- /tiro:ust -->
+<main id="icerik">
 
-  <div id="mobileNav" class="mobile-nav" hidden>
-    <div class="mobile-nav-inner">
-      <a href="#urun">Ürün</a>
-      <a href="#hakkimizda">Hakkımızda</a>
-      <a href="#iletisim">İletişim</a>
-      <a href="blog/">Blog</a>
-      <a href="https://calendly.com/lycianapp/30min" data-calendly target="_blank" rel="noopener" class="btn btn-primary btn-arrow">30 dk konuşalım</a>
+<header class="kap sayfa-bas">
+  <span class="ust-baslik">Sık sorulanlar</span>
+  <h1>Kısa cevaplar.</h1>
+  <p>Fiyat, donanım, gizlilik ve iş akışı üzerine en sık gelen sorular. Cevabı burada yoksa <a href="/iletisim">bize yazın</a>.</p>
+</header>
+
+<section class="kap dar sss" aria-label="Sık sorulan sorular">
+<details>
+<summary>Fiyatı ne kadar?</summary>
+<div class="duzyazi">
+<p> tiro şu an kapalı beta. Fiyat ve ticari şartları ilk görüşmede şeffaf konuşuyoruz; çünkü kurulumu konuşarak yapıyor, ihtiyaca göre uyarlıyoruz. <a href="/iletisim">Erken erişim talep edin</a>, dönüş yapalım. </p>
+</div>
+</details>
+<details>
+<summary>Hangi bilgisayarda çalışır?</summary>
+<div class="duzyazi">
+<p> MacBook (Apple Silicon önerilir) ve modern Windows bilgisayarlarında çalışır. tiro 4 farklı profilde gelir; en hafif 6 GB RAM ile, en güçlü 32 GB RAM ile. <a href="/urun#donanim">Donanım uyumluluğu</a> tablosundan bilgisayarınız için uygun profili görebilirsiniz. </p>
+</div>
+</details>
+<details>
+<summary>İnternetsiz çalışıyor mu?</summary>
+<div class="duzyazi">
+<p> Evet. Yapay zeka modeli kendi bilgisayarınızda çalışıyor. Dosya yüklemek, soru sormak, savunma yazmak için internet bağlantısı gerekmiyor. İlk kurulum ve isteğe bağlı güncellemeler dışında hiçbir aşamada internete ihtiyaç yok. </p>
+</div>
+</details>
+<details>
+<summary>Veriler nereye gidiyor?</summary>
+<div class="duzyazi">
+<p> Hiçbir yere. Dosya, taslak savunma ve aldığınız cevapların hepsi bilgisayarınızda kalır. tiro bulut sunucusu kullanmaz, üçüncü taraf API çağırmaz. KVKK ve meslek sırrı açısından en başta verilmiş bir karar. </p>
+<p> Ayrıntı: <a href="/kvkk">KVKK aydınlatma metni</a>. </p>
+</div>
+</details>
+<details>
+<summary>UDF dosyası açıyor mu?</summary>
+<div class="duzyazi">
+<p> Evet. UYAP'tan indirdiğiniz UDF dosyalarını PDF ve taranmış belgelerle aynı listede açar. Yazdığınız savunma taslağını da <strong>UYAP'a yüklenmeye hazır UDF</strong> ya da PDF olarak dışa aktarır. </p>
+</div>
+</details>
+<details>
+<summary>Modeli nasıl güncelliyorsunuz?</summary>
+<div class="duzyazi">
+<p> Yapay zeka modelimizi Türk hukuk mevzuatı ve dosya yapısı değiştikçe yeniden eğitiyor ve dağıtıyoruz. Güncelleme isteğe bağlı; siz onay verdiğinizde yeni model bilgisayarınıza iner. Eski modelle çalışmaya devam etme hakkınız her zaman saklıdır. </p>
+</div>
+</details>
+<details>
+<summary>Test edebilir miyim?</summary>
+<div class="duzyazi">
+<p> Beta sürecinde her başvuruyla teker teker konuşuyoruz. Görüşmede bilgisayarınıza uygun profili seçiyor, kurulum yapıyor ve ilk dosyanızı birlikte açıyoruz. <a href="/iletisim">Başvuru</a> bırakın, dönüş yapalım. </p>
+</div>
+</details>
+<details>
+<summary>tiro avukat yerine geçer mi?</summary>
+<div class="duzyazi">
+<p> Hayır. tiro <strong>asistan</strong>dır. Dosyayı okur, olayları kronolojiye dizer, kaynağı koyar; kararı, savunmayı ve hukuki kanaati avukat verir. Mahkeme önündeki son söz her zaman avukatındır. Bu sınırı baştan koyduk; ürün de bu felsefeyle kuruldu. </p>
+<p> Hikayemiz bu sınırın üzerine kurulu. <a href="/hakkimizda">hakkımızda sayfasında</a> Cicero'nun yanındaki Tiro'dan bahsediyoruz. </p>
+</div>
+</details>
+</section>
+
+</main>
+<!-- tiro:alt -->
+<footer class="alt">
+  <div class="kap">
+    <div class="alt-ic">
+      <div class="alt-marka">
+        <a class="marka" href="/"><img src="/assets/tiro_icon.svg" alt="" width="26" height="26">tiro</a>
+        <p>Ceza avukatları için bilgisayarda çalışan yapay zeka. Hukukta yapay zeka ve veri gizliliği üzerine yazılar.</p>
+      </div>
+      <div>
+        <h2>Yazılar</h2>
+        <ul>
+          <li><a href="/blog/gundem">Gündem</a></li>
+          <li><a href="/blog/rehber">Rehber</a></li>
+          <li><a href="/blog/urun-notlari">Ürün notları</a></li>
+          <li><a href="/blog/rss.xml">RSS</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Ürün</h2>
+        <ul>
+          <li><a href="/urun">Nasıl çalışır</a></li>
+          <li><a href="/gizlilik">Gizlilik</a></li>
+          <li><a href="/sss">Sık sorulanlar</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>tiro</h2>
+        <ul>
+          <li><a href="/hakkimizda">Hakkımızda</a></li>
+          <li><a href="/iletisim">İletişim</a></li>
+          <li><a href="/kvkk">KVKK aydınlatma metni</a></li>
+          <li><a href="/kullanim-sartlari">Kullanım şartları</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="alt-yasal">
+      <p>tiro bir hukuk bürosu değildir. Bu sitedeki yazılar genel bilgilendirme amaçlıdır, hukuki mütalaa veya tavsiye yerine geçmez.</p>
+      <span>© 2026 tiro.legal</span>
     </div>
   </div>
-
-  <script src="js/main.js?v=20260715a"></script>
+</footer>
+<!-- /tiro:alt -->
 </body>
-
 </html>

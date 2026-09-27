@@ -1,86 +1,54 @@
-/*
-  tiro.legal — contact form
-  Client-side validation + Web3Forms submit.
-  Loaded on the contact page.
-*/
-
 (function () {
   'use strict';
 
-  const form = document.getElementById('contactForm');
-  const feedback = document.getElementById('formFeedback');
+  var form = document.getElementById('iletisimFormu');
+  var durum = document.getElementById('formDurum');
+  if (!form || !durum) return;
 
-  if (!form) return;
+  var EPOSTA = 'mustafa_arinmis@outlook.com';
 
-  function setFeedback(state) {
-    if (!feedback) return;
-    feedback.className = `form-feedback ${state}`;
+  function hata(ad, mesaj) {
+    var alan = form.elements[ad];
+    form.querySelector('[data-hata="' + ad + '"]').textContent = mesaj;
+    alan.classList.toggle('hatali', Boolean(mesaj));
   }
 
-  function setFieldError(name, message) {
-    const field = form.elements[name];
-    const error = form.querySelector(`[data-error-for="${name}"]`);
-    if (!field || !error) return;
-    error.textContent = message;
-    field.classList.toggle('is-invalid', Boolean(message));
+  function durumYaz(tur, metin) {
+    durum.dataset.durum = tur;
+    durum.textContent = metin;
   }
 
-  function validateEmail(value) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-  }
+  form.addEventListener('submit', function (olay) {
+    olay.preventDefault();
 
-  form.addEventListener('submit', async (event) => {
-    event.preventDefault();
+    var ad = form.elements.name.value.trim();
+    var eposta = form.elements.email.value.trim();
+    var mesaj = form.elements.message.value.trim();
 
-    const name = form.elements.name.value.trim();
-    const email = form.elements.email.value.trim();
-    const message = form.elements.message.value.trim();
-
-    setFieldError('name', '');
-    setFieldError('email', '');
-    setFieldError('message', '');
-
-    let hasError = false;
-
-    if (name.length < 3) {
-      setFieldError('name', 'Lütfen en az 3 karakter girin.');
-      hasError = true;
-    }
-
-    if (!validateEmail(email)) {
-      setFieldError('email', 'Geçerli bir e-posta adresi girin.');
-      hasError = true;
-    }
-
-    if (message.length < 16) {
-      setFieldError('message', 'Lütfen en az 16 karakterlik kısa bir not ekleyin.');
-      hasError = true;
-    }
-
-    if (hasError) {
-      setFeedback('error');
+    hata('name', ad.length < 3 ? 'En az 3 karakter girin.' : '');
+    hata('email', /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(eposta) ? '' : 'Geçerli bir e-posta adresi girin.');
+    hata('message', mesaj.length < 16 ? 'Birkaç cümlelik kısa bir not ekleyin.' : '');
+    if (form.querySelector('.hatali')) {
+      durumYaz('hata', 'İşaretli alanları kontrol edin.');
       return;
     }
 
-    setFeedback('loading');
+    var veri = new FormData(form);
+    veri.set('replyto', eposta);
+    durumYaz('', 'Gönderiliyor…');
 
-    const data = new FormData(form);
-    data.set('replyto', email);
-
-    try {
-      const res = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: data,
-      });
-      const json = await res.json().catch(() => ({}));
-      if (res.ok && json.success) {
-        setFeedback('success');
+    fetch('https://api.web3forms.com/submit', { method: 'POST', body: veri })
+      .then(function (yanit) {
+        return yanit.json().then(function (json) {
+          if (!yanit.ok || !json.success) throw new Error('gönderilemedi');
+        });
+      })
+      .then(function () {
         form.reset();
-      } else {
-        setFeedback('network-error');
-      }
-    } catch (_err) {
-      setFeedback('network-error');
-    }
+        durumYaz('basarili', 'Notunuz ulaştı, en kısa sürede dönüş yapacağız.');
+      })
+      .catch(function () {
+        durumYaz('hata', 'Gönderilemedi. Tekrar deneyin ya da ' + EPOSTA + ' adresine yazın.');
+      });
   });
 })();

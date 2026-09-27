@@ -1,100 +1,36 @@
-/*
-  tiro.legal — hardware compatibility check
-  Detects RAM/cores via navigator API and highlights matching tier.
-  Loaded on the product page.
-*/
-
 (function () {
   'use strict';
 
-  const button = document.getElementById('compatibilityButton');
-  const summary = document.getElementById('compatibilitySummary');
-  const meta = document.getElementById('compatibilityMeta');
-  const hardwareRows = Array.from(document.querySelectorAll('[data-tier]'));
+  var dugme = document.getElementById('uyumKontrol');
+  var sonuc = document.getElementById('uyumSonuc');
+  if (!dugme || !sonuc) return;
 
-  if (!button) return;
+  var adlar = { hafif: 'Hafif', standart: 'Standart', guclu: 'Çok güçlü', maksimum: 'Maksimum' };
 
-  const tierLabels = {
-    light: 'Hafif',
-    standard: 'Standart',
-    power: 'Çok Güçlü',
-    maximum: 'Maksimum'
-  };
-
-  function renderMeta(state, label, text, detail) {
-    if (!meta) return;
-    meta.dataset.state = state;
-    const detailHTML = detail
-      ? `<p class="hw-meta-detail">${detail}</p>`
-      : '';
-    meta.innerHTML = `
-      <span class="status-pill">${label}</span>
-      <p class="hw-meta-headline">${text}</p>
-      ${detailHTML}
-    `;
-  }
-
-  function clearRows() {
-    hardwareRows.forEach((row) => row.classList.remove('is-active'));
-  }
-
-  function detect() {
-    const ua = navigator.userAgent || '';
-    const platform = navigator.platform || '';
-    const isMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(ua);
-
-    if (isMobile) {
-      return {
-        status: 'mobile',
-        tier: null,
-        summary: 'tiro masaüstü uygulaması olarak konumlanır. Mobil cihazlarda çalışma profili önerilmez.',
-        label: 'Mobil cihaz',
-        text: 'Bu sayfa masaüstü kurulum için tasarlandı. Tabloyu referans alabilir, ayrıntılar için iletişime geçebilirsiniz.'
-      };
+  function profil() {
+    if (/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent)) {
+      return { metin: 'Telefon veya tablet algılandı. tiro masaüstü uygulamasıdır; tabloyu bilgisayarınız için referans alın.' };
     }
-
-    const deviceMemory = navigator.deviceMemory;
-    const cores = navigator.hardwareConcurrency || 0;
-    const os = /Mac/.test(platform) || /Mac OS X/.test(ua) ? 'macOS' : /Windows/.test(ua) ? 'Windows' : 'Diğer';
-
-    if (!deviceMemory) {
-      return {
-        status: 'unavailable',
-        tier: null,
-        summary: 'Bu tarayıcı RAM bilgisini paylaşmıyor. Yandaki tabloyu referans alarak uygun profili seçebilirsiniz.',
-        label: 'Kısmi görünürlük',
-        text: `${os} algılandı. Safari ve Firefox benzeri tarayıcılar donanım bilgisini sınırlayabilir.`
-      };
+    var ram = navigator.deviceMemory;
+    var cekirdek = navigator.hardwareConcurrency || 0;
+    if (!ram) {
+      return { metin: 'Bu tarayıcı bellek bilgisini paylaşmıyor. Uygun profili tablodan seçebilirsiniz.' };
     }
-
-    let tier = 'light';
-    if (deviceMemory >= 24 || cores >= 12) tier = 'maximum';
-    else if (deviceMemory >= 16 || cores >= 10) tier = 'power';
-    else if (deviceMemory >= 8 || cores >= 6) tier = 'standard';
-
+    var p = 'hafif';
+    if (ram >= 24 || cekirdek >= 12) p = 'maksimum';
+    else if (ram >= 16 || cekirdek >= 10) p = 'guclu';
+    else if (ram >= 8 || cekirdek >= 6) p = 'standart';
     return {
-      status: 'success',
-      tier,
-      summary: `Sisteminiz için önerilen profil: ${tierLabels[tier]}.`,
-      label: 'Öneri hazır',
-      text: `Sisteminiz <strong>${tierLabels[tier]}</strong> profiline uygun gözüküyor.`,
-      detail: 'Kesin kurulum kararı için gerçek cihaz değerlendirmesi yapılır.'
+      profil: p,
+      metin: 'Bilgisayarınız ' + adlar[p] + ' profiline uygun görünüyor. Tarayıcılar belleği yuvarlayarak bildirdiği için kesin kararı kurulum görüşmesinde veriyoruz.'
     };
   }
 
-  button.addEventListener('click', () => {
-    clearRows();
-    summary.textContent = 'Sistem profili okunuyor…';
-    renderMeta('loading', 'Analiz', 'Tarayıcının paylaşabildiği donanım verisi kontrol ediliyor.');
-
-    window.setTimeout(() => {
-      const result = detect();
-      if (result.tier) {
-        const row = document.querySelector(`[data-tier="${result.tier}"]`);
-        if (row) row.classList.add('is-active');
-      }
-      summary.textContent = result.summary;
-      renderMeta(result.status, result.label, result.text, result.detail);
-    }, 420);
+  dugme.addEventListener('click', function () {
+    var s = profil();
+    document.querySelectorAll('tr[data-profil]').forEach(function (tr) {
+      tr.classList.toggle('secili', tr.dataset.profil === s.profil);
+    });
+    sonuc.textContent = s.metin;
   });
 })();

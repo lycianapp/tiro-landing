@@ -1,241 +1,178 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UDF dosyasında çalışmak: UYAP biçiminin teknik gerçekleri — tiro</title>
-  <meta name="description"
-    content="UDF nedir, UYAP Editör neden zorunlu, dosyayı PDF'e çevirince ne kayboluyor? Avukatın UDF ile yaşadığı pratik sorunlar ve çözümleri." />
-  <meta name="theme-color" content="#f8f6f2" />
-  <meta property="og:title" content="UDF dosyasında çalışmak" />
-  <meta property="og:description" content="UYAP biçimi, e-imza, dönüştürme sorunları ve tiro'nun yaklaşımı." />
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://tiro.legal/blog/udf-dosyasinda-calismak.html" />
-  <meta property="article:published_time" content="2026-05-09" />
-  <meta property="og:image" content="https://tiro.legal/assets/og-image.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="tiro — Söz aramızda kalır." />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://tiro.legal/assets/og-image.jpg" />
-  <link rel="canonical" href="https://tiro.legal/blog/udf-dosyasinda-calismak.html" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
-    rel="stylesheet" />
-  <link rel="icon" type="image/svg+xml" href="../assets/favicon/favicon.svg" />
-  <link rel="icon" type="image/png" href="../assets/favicon/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/x-icon" href="../assets/favicon/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png" />
-  <link rel="manifest" href="../assets/favicon/site.webmanifest" />
-  <link rel="stylesheet" href="../css/base.css?v=20260715a" />
-  <link rel="stylesheet" href="../css/components.css?v=20260715a" />
-  <link rel="stylesheet" href="../css/layout.css?v=20260715a" />
-  <link rel="stylesheet" href="../css/pages/blog.css?v=20260715a" />
-  <link rel="stylesheet" href="../css/responsive.css?v=20260715a" />
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "UDF dosyasında çalışmak: UYAP biçiminin teknik gerçekleri",
-    "datePublished": "2026-05-09",
-    "author": { "@type": "Organization", "name": "tiro" },
-    "publisher": {
-      "@type": "Organization",
-      "name": "tiro",
-      "logo": { "@type": "ImageObject", "url": "https://tiro.legal/assets/tiro_icon.svg" }
-    },
-    "mainEntityOfPage": "https://tiro.legal/blog/udf-dosyasinda-calismak.html",
-    "description": "UDF nedir, UYAP Editör neden zorunlu, dönüştürme sorunları ve avukatın çözüm yolları.",
-    "inLanguage": "tr-TR"
-  }
-  </script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UDF dosyası nedir, UYAP Editör’de nasıl çalışılır? — tiro</title>
+<meta name="description" content="UDF nedir, UYAP Editör nereden indirilir, imzalı belgede değişiklik neden imzayı düşürür, UDF nasıl PDF’e çevrilir? Resmi kaynaklara dayalı rehber.">
+<meta name="author" content="tiro">
+<meta property="article:published_time" content="2026-05-09">
+<meta property="article:modified_time" content="2026-09-24">
+<meta property="article:section" content="rehber">
+<!-- tiro:bas -->
+<link rel="canonical" href="https://tiro.legal/blog/udf-dosyasinda-calismak">
+<meta property="og:site_name" content="tiro">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UDF dosyası nedir, UYAP Editör’de nasıl çalışılır?">
+<meta property="og:description" content="UDF nedir, UYAP Editör nereden indirilir, imzalı belgede değişiklik neden imzayı düşürür, UDF nasıl PDF’e çevrilir? Resmi kaynaklara dayalı rehber.">
+<meta property="og:url" content="https://tiro.legal/blog/udf-dosyasinda-calismak">
+<meta property="og:image" content="https://tiro.legal/assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"UDF dosyası nedir, UYAP Editör’de nasıl çalışılır?","description":"UDF nedir, UYAP Editör nereden indirilir, imzalı belgede değişiklik neden imzayı düşürür, UDF nasıl PDF’e çevrilir? Resmi kaynaklara dayalı rehber.","datePublished":"2026-05-09","dateModified":"2026-09-24","author":{"@type":"Organization","name":"tiro","url":"https://tiro.legal"},"publisher":{"@type":"Organization","name":"tiro","logo":{"@type":"ImageObject","url":"https://tiro.legal/assets/tiro_icon.svg"}},"image":"https://tiro.legal/assets/og-image.jpg","mainEntityOfPage":"https://tiro.legal/blog/udf-dosyasinda-calismak","articleSection":"Rehber","inLanguage":"tr-TR"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana sayfa","item":"https://tiro.legal/"},{"@type":"ListItem","position":2,"name":"Yazılar","item":"https://tiro.legal/blog/"},{"@type":"ListItem","position":3,"name":"Rehber","item":"https://tiro.legal/blog/rehber"},{"@type":"ListItem","position":4,"name":"UDF dosyası nedir, UYAP Editör’de nasıl çalışılır?","item":"https://tiro.legal/blog/udf-dosyasinda-calismak"}]}</script>
+<link rel="preload" href="/assets/fonts/source-serif-4-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/source-sans-3-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/site.css?v=c5646d07">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+<link rel="icon" href="/assets/favicon/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+<link rel="manifest" href="/assets/favicon/site.webmanifest">
+<link rel="alternate" type="application/rss+xml" title="tiro yazıları" href="/blog/rss.xml">
+<meta name="theme-color" content="#f7f5f0">
+<script src="/js/main.js?v=c5646d07" defer></script>
+<!-- /tiro:bas -->
 </head>
-
-<body>
-  <a href="#main" class="skip-link">Ana içeriğe atla</a>
-
-  <div class="site">
-    <header class="topbar">
-      <div class="container topbar-inner">
-        <a href="../index.html" class="brand" aria-label="tiro ana sayfa">
-          <img src="../assets/tiro_icon.svg" alt="" class="brand-logo" />
-          <span class="brand-text">
-            <strong class="brand-name">tiro</strong>
-            <small>tiro.legal</small>
-          </span>
-        </a>
-
-        <nav class="nav" aria-label="Ana gezinme">
-          <a href="/#urun">Ürün</a>
-          <a href="/#hakkimizda">Hakkımızda</a>
-          <a href="/#iletisim">İletişim</a>
-          <a href="../blog/" aria-current="page">Blog</a>
-        </nav>
-
-        <button type="button" class="nav-toggle" aria-controls="mobileNav" aria-expanded="false" aria-label="Menüyü aç">
-          <span class="nav-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span>
-        </button>
-        <a href="/#iletisim" class="btn btn-primary btn-compact topbar-cta">Erişim Talep Et</a>
-      </div>
-    </header>
-
-    <main id="main">
-      <article class="container">
-        <header class="post-hero reveal">
-          <div class="post-meta">
-            <span class="post-date">2026-05-09</span>
-            <span class="post-divider" aria-hidden="true"></span>
-            <span>4 dk okuma</span>
-            <span class="post-divider" aria-hidden="true"></span>
-            <span>Yazı serisi · 03</span>
-          </div>
-          <h1>UDF dosyasında çalışmak: UYAP biçiminin teknik gerçekleri.</h1>
-          <p class="post-lead">
-            UDF nedir, UYAP Editör neden zorunlu, neden Word'e attığınızda
-            biçim bozuluyor? Avukatın günlük olarak yaşadığı UDF sorunları ve
-            kayıpsız çalışmanın yolu.
-          </p>
-          <div class="post-tags">
-            <span class="blog-tag">UDF</span>
-            <span class="blog-tag">UYAP</span>
-          </div>
-        </header>
-
-        <div class="prose reveal">
-          <p>
-            UDF, "UYAP Doküman Formatı"nın kısaltması. Ulusal Yargı Ağı Bilişim
-            Sistemi'ne yüklenen tüm metin belgeleri bu uzantıyla saklanır. Word
-            değil, PDF değil — UYAP'a özel, kapalı bir format.
-          </p>
-
-          <p>
-            Açık olmamasının pratik anlamı: UDF dosyasını gerçek anlamda
-            açmanın, düzenlemenin ve e-imza ile imzalamanın <strong>tek meşru
-            yolu UYAP Editör</strong>. Editör Adalet Bakanlığı tarafından
-            ücretsiz dağıtılıyor; ama tek başına çalışmaz, biçim de Editör'ün
-            sürümüne bağlıdır.
-          </p>
-
-          <h2>Avukatın yaşadığı somut sorunlar</h2>
-
-          <p>UDF'le çalışırken sık karşılaşılan üç tipik kayıp:</p>
-
-          <ul>
-            <li><strong>PDF'e dönüştürünce e-imza kayboluyor.</strong> UDF içinde
-              gömülü olan e-imza bilgisi, PDF dışa aktarımında çoğu zaman
-              taşınmıyor. Mahkemeye PDF olarak sunulan belge "imzasız" muamelesi
-              görebiliyor.</li>
-            <li><strong>Word'e veya başka editöre attığınızda biçim bozuluyor.</strong>
-              Tablolar, sayfa numaraları, başlık hizaları kayıyor. Geri UDF'e
-              dönüş ise neredeyse imkansız.</li>
-            <li><strong>Büyük UDF dosyaları açılmakta zorlanıyor.</strong>
-              Binlerce sayfalık torba iddianamede Editör donabiliyor; arama
-              özelliği de yetersiz kalabiliyor.</li>
-          </ul>
-
-          <p>
-            Sonuç: avukat çalışma akışını parçalıyor — okuyup not alacak yer
-            ile yazacak yer farklı, kaynağı tekrar bulmak için dosya içinde
-            ileri-geri.
-          </p>
-
-          <blockquote>
-            UDF'in en büyük gücü olan e-imza ve UYAP uyumu, aynı zamanda en
-            büyük kısıtı: Editör dışında çalışırken bu güç buharlaşıyor.
-          </blockquote>
-
-          <h2>tiro nasıl çalışıyor?</h2>
-
-          <p>
-            tiro UDF dosyalarını <strong>orijinal haliyle</strong> okur ve indeksler.
-            UDF içindeki başlıkları, paragrafları ve metadata'yı kayıpsız
-            çıkartır; Word veya PDF'e dönüştürmek zorunda kalmadan üzerinde arama,
-            karşılaştırma ve özet çalışmaları yapar.
-          </p>
-
-          <p>
-            Yazma tarafında da aynı ilke: yerleşik UDF düzenleyici ile
-            paragraf, başlık, koyu/italik gibi temel formatlama tek
-            pencerede yapılır. Çıktı yine UDF olarak verilir — UYAP'a
-            yüklemeye hazır.
-          </p>
-
-          <h3>İş akışı kısalıyor</h3>
-
-          <p>
-            Tek pencere, tek format, tek e-imza yolu. "Word'e taslak çıkar,
-            geri UDF'e çevir, biçim kaymış, tekrar düzelt" döngüsü
-            kapanıyor. Avukatın asıl işi — dosyayı okuyup savunma kurmak —
-            engelle değil, doğrudan yapılıyor.
-          </p>
-
-          <p>
-            <a href="/#urun">Ürün sayfasında</a> evrak akışı modülünün
-            örneklerini görebilirsiniz.
-          </p>
-        </div>
-
-        <footer class="post-footer">
-          <a href="index.html" class="post-back">Tüm yazılar</a>
-
-          <div class="post-cta">
-            <strong>tiro'yu kendi dosyanızda görmek ister misiniz?</strong>
-            <p>
-              Şu an kapalı beta. Kurulumu konuşarak yapıyoruz; nasıl çalıştığınızı
-              anlamak için kısa bir not bırakın, dönüş yapalım.
-            </p>
-            <div class="post-cta-actions">
-              <a href="https://calendly.com/lycianapp/30min" data-calendly target="_blank" rel="noopener" class="btn btn-primary btn-arrow">30 dk konuşalım</a>
-              <a href="/#urun" class="btn btn-ghost">Ürünü gör</a>
-            </div>
-          </div>
-        </footer>
-      </article>
-    </main>
-
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-inner">
-          <div class="footer-brand">
-            <img src="../assets/tiro_icon.svg" alt="" class="brand-logo" />
-            <small>ceza avukatları için · dosyanız sizinle kalsın diye</small>
-            <a class="footer-email" href="mailto:mustafa_arinmis@outlook.com">mustafa_arinmis@outlook.com</a>
-          </div>
-          <nav class="footer-nav" aria-label="Alt gezinme">
-            <a href="/#urun">Ürün</a>
-            <a href="/#hakkimizda">Hakkımızda</a>
-            <a href="../blog/" aria-current="page">Blog</a>
-            <a href="../sss.html">Sık sorulanlar</a>
-            <a href="/#iletisim">İletişim</a>
-          </nav>
-          <div class="footer-legal" aria-label="Yasal">
-            <a href="../kvkk.html">KVKK</a>
-            <a href="../kullanim-sartlari.html">Kullanım şartları</a>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <span class="footer-copy">© 2026 tiro.legal</span>
-          <span class="footer-badge">Yerel · Türkiye</span>
-        </div>
-      </div>
-    </footer>
+<body data-bolum="blog">
+<!-- tiro:ust -->
+<a class="atla" href="#icerik">İçeriğe geç</a>
+<header class="ust">
+  <div class="kap ust-ic">
+    <a class="marka" href="/" aria-label="tiro ana sayfa"><img src="/assets/tiro_icon.svg" alt="" width="26" height="26">tiro</a>
+    <nav class="menu" id="menu" aria-label="Ana menü">
+      <a href="/blog/" data-bolum="blog" aria-current="page">Yazılar</a>
+      <a href="/urun" data-bolum="urun">Ürün</a>
+      <a href="/gizlilik" data-bolum="gizlilik">Gizlilik</a>
+      <a href="/hakkimizda" data-bolum="hakkimizda">Hakkımızda</a>
+      <a href="/iletisim" data-bolum="iletisim">İletişim</a>
+    </nav>
+    <a class="dugme" href="/iletisim">Görüşme ayarla</a>
+    <button class="menu-ac" type="button" aria-controls="menu" aria-expanded="false">Menü</button>
   </div>
+</header>
+<!-- /tiro:ust -->
+<main id="icerik">
+<article class="kap dar yazi">
+<header class="yazi-bas">
+<!-- tiro:kunye -->
+<div class="kunye"><a href="/blog/rehber">Rehber</a><time datetime="2026-05-09">9 Mayıs 2026</time><span>tiro</span><span>6 dk okuma</span></div>
+<!-- /tiro:kunye -->
+<h1>UDF dosyası nedir, UYAP Editör’de nasıl çalışılır?</h1>
+<p class="yazi-ozet">UYAP’ın belge biçimi UDF’yle çalışırken sık sorulanlar: Editör sürümleri, e-imza, imzalı belgede değişiklik, biçim dönüştürme ve Editör’ün açılmaması. Adalet Bakanlığının resmi sayfalarına dayanıyor.</p>
+</header>
+<div class="yazi-govde duzyazi">
+<p>UDF, UYAP Doküman Editörü’nün belgeleri kaydettiği biçimdir; Bakanlığın yardım sayfası bu biçimi “UYAP Doküman Formatı” olarak anıyor. UDF dosyasını açmanın, düzenlemenin ve e-imzayla imzalamanın resmi aracı UYAP Editör’dür. Editör UDF’yi Word, ODT, RTF ve PDF biçimlerine çevirebilir, ama imzalı bir belgede yapılan değişiklik kaydedilirse imza bilgisi kaybolur ve belgenin yeniden imzalanması gerekir.</p>
 
-  <div id="mobileNav" class="mobile-nav" hidden>
-    <div class="mobile-nav-inner">
-      <a href="/#urun">Ürün</a>
-      <a href="/#hakkimizda">Hakkımızda</a>
-      <a href="/#iletisim">İletişim</a>
-      <a href="../blog/" aria-current="page">Blog</a>
-      <a href="https://calendly.com/lycianapp/30min" data-calendly target="_blank" rel="noopener" class="btn btn-primary btn-arrow">30 dk konuşalım</a>
+<p>Bu yazıda, Adalet Bakanlığının resmi sayfalarına dayanarak UDF’yle çalışırken en çok karşılaşılan konuları topladık: Editör’ün nereden edinileceği, dilekçenin nasıl imzalanıp gönderildiği, imzalı belgede değişikliğin neden sorun çıkardığı, biçim dönüştürme ve Editör açılmadığında resmi kaynakların önerdiği adımlar.</p>
+
+<h2>UDF nedir, avukat neden bu biçimle karşılaşır?</h2>
+
+<p>Ceza yargılamasında UYAP kullanımı kanundan gelir. <a href="https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=5271&amp;MevzuatTur=1&amp;MevzuatTertip=5" rel="noopener">CMK m. 38/A</a> şöyle başlar: “Her türlü ceza muhakemesi işlemlerinde Ulusal Yargı Ağı Bilişim Sistemi (UYAP) kullanılır.” Aynı maddenin ikinci fıkrasına göre, kanunlarda gösterilen istisnalar dışında, “dosyalar güvenli elektronik imza kullanılarak UYAP’tan incelenebilir ve her türlü ceza muhakemesi işlemi yapılabilir.”</p>
+
+<p>UYAP’ın metin belgeleri için kullandığı araç UYAP Doküman Editörü. <a href="https://uyap.gov.tr/Uyap-Editor-Yardim" rel="noopener">Resmi yardım sayfası</a> Editör’ü, Adalet Bakanlığı Bilgi İşlem Dairesi Başkanlığı tarafından geliştirilen ve “UYAP Bilişim Sistemiyle entegre çalışabilen bir kelime işleme programı” olarak tanımlıyor. Aynı sayfaya göre “Editör otomatik olarak dosyaları .udf biçiminde kaydeder.” UYAP’tan indirilen evrakın ve Editör’de yazılan dilekçenin UDF uzantılı olması bundan kaynaklanıyor.</p>
+
+<h2>UYAP Editör nereden indirilir, hangi sistemlerde çalışır?</h2>
+
+<p>Masaüstü sürümleri Bakanlığın <a href="https://uyap.gov.tr/UYAP-Editor" rel="noopener">UYAP Editör sayfasında</a> yayımlanıyor. Bu yazının hazırlandığı tarihte sayfada Windows için v5.4.20 (EXE ve MSI kurulum dosyaları), macOS için Intel ve Apple Silicon işlemcilere ayrı ayrı v5.4.21, Big Sur 11 ve öncesi Intel Mac’ler için v5.4.20, Pardus ve Debian tabanlı sistemler için v5.4.20 bulunuyor. Sürüm numaraları değiştiği için güncel sürümü her zaman bu sayfadan kontrol etmek gerekir.</p>
+
+<p>Sayfadaki iki not pratikte işe yarıyor. Mac’te işlemciye uygun (x86_64 ya da ARM64) sürüm kurulduğunda ayrıca Java kurulmasına gerek yok; Big Sur ve öncesi için hazırlanan Intel sürümü ise uyumlu bir Java sürümü istiyor. Pardus ve Debian tabanlı sistemlerde Editör’den yazıcıya çıktı alabilmek için “cups-bsd” paketinin yüklü olması gerekiyor.</p>
+
+<p>Telefon ve tablet için Android ve iOS’ta “Uyap Doküman Editör” uygulaması var. <a href="https://apps.apple.com/tr/app/uyap-dok%C3%BCman-edit%C3%B6r/id1481849944" rel="noopener">App Store sayfasına</a> göre uygulama ücretsiz ve “UYAP sisteminde oluşturulmuş UDF dokümanlarının görüntülenmesi için hazırlanmıştır.” Açıklamada sayılan özellikler görüntüleme, doküman içinde arama ve içeriği PDF olarak çıkarma.</p>
+
+<p>Aynı açıklamada dosya paylaşımıyla ilgili bir uyarı var: WhatsApp Web, UDF dosyalarının uzantısını otomatik olarak .zip’e çeviriyor ve bu dosyalar mobil uygulamada zip dosyası olarak algılanıyor. Uygulamanın açıklaması bu nedenle UDF paylaşımında WhatsApp Web yerine WhatsApp’ın mobil uygulamasının kullanılmasını öneriyor ve açılacak dosyanın .udf uzantılı olduğundan emin olunmasını istiyor.</p>
+
+<h2>Dilekçe UDF olarak nasıl imzalanıp gönderilir?</h2>
+
+<p>Avukat Portal’ın <a href="https://vatandas.uyap.gov.tr/main/avukat/sss.jsp" rel="noopener">sık sorulan sorular sayfası</a> akışı şöyle anlatıyor: mahkemeye gönderilecek evrak UYAP Editör’de hazırlanıp kaydediliyor, ardından Araçlar menüsünden imzalanıyor. Gönderim için portalda Dosya Sorgulama bölümünden yargı birimi ve birim seçiliyor, dosya görüntülenip evrak gönderme butonuna basılıyor, dosya seçiliyor, açıklama yazılıyor ve evrak türü (cevap, itiraz dilekçesi gibi) belirlendikten sonra gönderiliyor.</p>
+
+<p>İmzalama adımları Editör yardım sayfasında ayrıca anlatılıyor. E-imza kartı takılıyor ve kart üreticisinin sürücüleri yükleniyor. Araçlar menüsündeki “İmza Kütüphanesi”nden kartın kütüphanesi seçiliyor, İmzala simgesine tıklanıp e-imza şifresi giriliyor. İşlem tamamlandığında Editör’ün sağ üst köşesinde bir kurdele beliriyor; bu kurdeleye tıklanarak imzanın sertifika bilgileri görülebiliyor.</p>
+
+<p>Bu imzanın hukuki değeri <a href="https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=5070&amp;MevzuatTur=1&amp;MevzuatTertip=5" rel="noopener">5070 sayılı Elektronik İmza Kanunu</a> m. 5’ten gelir: “Güvenli elektronik imza, elle atılan imza ile aynı hukukî sonucu doğurur.” CMK m. 38/A/5 de çelişki hâlinde hangi belgenin esas alınacağını belirler: “Elektronik imzalı belgenin elle atılan imzalı belgeyle çelişmesi halinde UYAP’ta kayıtlı olan güvenli elektronik imzalı belge geçerli kabul edilir.”</p>
+
+<h2>İmzalı bir UDF’de değişiklik yapınca ne olur?</h2>
+
+<p>Editör yardım sayfası bu konuda açık bir uyarı içeriyor: “İmzalı bir evrakta değişiklik yapılmışsa çıkış aşamasında yapılan değişikliğin kaydedilip kaydedilmeyeceğinin teyidi istenmektedir. Değişikliğin kaydı seçilmesi dokümanda bulanan imza bilgilerinin kaybolmasına sebebiyet verecektir.” Devamında imzalı evrakta yapılacak değişiklikten sonra evrakın e-imzayla yeniden imzalanması gerektiği belirtiliyor.</p>
+
+<p>Bunun nedeni güvenli elektronik imzanın tanımında yatıyor. 5070 sayılı Kanun m. 4’e göre güvenli elektronik imza, “İmzalanmış elektronik veride sonradan herhangi bir değişiklik yapılıp yapılmadığının tespitini sağlayan” imzadır. İmza, belgenin imzalandığı andaki hâline bağlıdır; içerik değişince eski imza o içeriği artık doğrulamaz.</p>
+
+<p>Pratik sonucu şu: son okumada fark edilen küçük bir düzeltme bile, değişiklik kaydedilirse belgenin yeniden imzalanmasını gerektirir. Çıkışta Editör’ün sorduğu kaydetme sorusu bu yüzden dikkatle cevaplanması gereken bir soru.</p>
+
+<p>İmzalı belgeyi Editör dışında doğrulamak için de bir yol var. Yardım sayfasına göre Dışa Aktar seçeneği, “Evraktaki imzalı kısmı dışarı aktararak farklı e imza uygulamaları tarafından açılması ve e imzaların doğrulanması” için kullanılıyor. Yazdırma sırasında karşılaşılan “web id” ise yine aynı sayfanın tanımıyla “evrakın aslının kontrol edilmesini sağlayan kod”.</p>
+
+<h2>UDF, Word’e veya PDF’e nasıl çevrilir?</h2>
+
+<p>Editör tek tek ve toplu dönüştürmeyi destekliyor. Farklı Kaydet ekranındaki doküman tipi listesinde yardım sayfasının saydığı biçimler .usf, .doc, .pdf, .odt, .rtf, .tif ve .jpg. Birden fazla dosya için Dosya menüsündeki “Tümünü Farklı Kaydet” kullanılıyor: evrak ya da klasör seçilerek UDF dosyaları tabloya ekleniyor, çıktı klasörü belirleniyor ve dosyalar tek tek ya da hep birlikte doc, odt, pdf veya rtf biçimine çevriliyor. Editör’de açılabilen dosya türleri ise .udf, .xml, .usf ve .rtf olarak sayılıyor.</p>
+
+<p>Yardım sayfası, dönüştürmede sayfa düzeninin nasıl korunduğu konusunda bilgi vermiyor. Çevrilen dosyayı özellikle tablo, üst ve alt yazı, sayfa numarası içeren belgelerde gözle kontrol etmek makul görünüyor. Dönüştürülen dosya ayrı bir dosyadır; UDF’deki imzayı kendiliğinden taşıdığına dair resmi kaynaklarda bir bilgi yok.</p>
+
+<h2>Editör açılmıyorsa resmi kaynaklar ne öneriyor?</h2>
+
+<p>UYAP Editör sayfasında “siyah ekran gelip gidiyor, Editör açılmıyor ve Editörde imzalama yapamıyorum” sorusu için üç adım yer alıyor. İlki, e-imza ve m-imza için Editör’ün son sürümünün kurulu olması. İkincisi, Windows’ta kullanıcı klasöründeki gizli <code>.uki</code> klasöründe bulunan <code>acilisdegerleri.xml</code> ve <code>tercihler.xml</code> dosyalarının silinmesi; Mac’te aynı klasörde bunlara ek olarak <code>lastOpened.xml</code> dosyası da siliniyor. Ardından Editör yönetici olarak yeniden çalıştırılıyor. Sorun sürerse Denetim Masası’ndan “Uyap Kelime İşlemci” kaldırılıyor, bilgisayar yeniden başlatılıyor, <code>C:\Uyap</code> klasöründeki yedekler alındıktan sonra klasör siliniyor ve Editör’ün son sürümü kuruluyor.</p>
+
+<p>Düzgün kapanmayan bir oturumda kaybolmuş görünen belgeler için yardım sayfası Dosya menüsündeki “Yedekleri Aç” seçeneğini gösteriyor. Aynı sayfa, kurtarılan belgeler “Tümünü Sil” ile silinirse bunlara yeniden ulaşılamayacağını da not ediyor.</p>
+
+<h2>UDF’yle Editör dışında çalışmak mümkün mü?</h2>
+
+<p>Resmi araçlar UYAP Editör ve mobil görüntüleyici. Bir ceza dosyası ise çoğu zaman UDF’lerin yanında PDF’ler ve taranmış evraktan oluşuyor, okuma ve not alma işi de Editör’ün dışına taşıyor. Bu noktada dosyanın hangi programda, hangi bilgisayarda işlendiği sorusu meslek sırrı açısından önem kazanıyor; konuyu <a href="/blog/ai-meslek-sirri">yapay zekaya meslek sırrı emanet edilir mi</a> yazısında ele aldık. tiro, UDF’leri PDF ve taranmış belgelerle aynı listede açıyor. Savunma editöründe yazılan metin de UYAP’a yüklemeye hazır UDF olarak dışa aktarılıyor. Bütün bu işlemler bilgisayarda yapılıyor, dosya dışarı çıkmıyor; ayrıntılar <a href="/urun">ürün</a> ve <a href="/gizlilik">gizlilik</a> sayfalarında.</p>
+
+<p>UDF’yle yaşanan sorunların önemli bir kısmı biçimin kendisinden değil, imzanın belgenin imzalandığı andaki hâline bağlı olmasından doğuyor. Bakanlığın yardım sayfaları da bu yüzden iki noktanın üzerinde duruyor: imzadan sonra yapılan her değişiklik yeni bir imza gerektiriyor, imzalama sorunlarının ilk çözüm adımı da Editör’ün son sürümünü kullanmak.</p>
+</div>
+<!-- tiro:yazi-son -->
+<footer class="yazi-son">
+<p class="not">Son güncelleme: <time datetime="2026-09-24">24 Eylül 2026</time></p><p class="not">Bu yazı genel bilgilendirme amaçlıdır, hukuki mütalaa veya tavsiye yerine geçmez.</p>
+<div class="kutu"><strong>tiro’yu kendi dosyanızda görün</strong><p>Ceza dosyasını bilgisayarınızda okuyan, cevaplarında dayandığı belgeyi ve satırı belirten yapay zeka. Kapalı beta sürecinde kurulumu birlikte yapıyoruz.</p><a class="dugme" href="/iletisim">Görüşme ayarla</a></div>
+<h2>Diğer yazılar</h2>
+<ul class="satirlar">
+<li class="satir"><div class="kunye"><a href="/blog/rehber">Rehber</a><time datetime="2026-05-09">9 Mayıs 2026</time><span>7 dk okuma</span></div><h3><a href="/blog/ai-meslek-sirri">Yapay zekaya meslek sırrı emanet edilir mi?</a></h3><p>Ceza dosyasını ChatGPT gibi bir bulut aracına yüklemek Av. K. m. 36, KVKK m. 6 ve m. 9 bakımından ne anlama gelir? Yerel çalışan modelde ne değişir?</p></li>
+<li class="satir"><div class="kunye"><a href="/blog/rehber">Rehber</a><time datetime="2026-05-09">9 Mayıs 2026</time><span>5 dk okuma</span></div><h3><a href="/blog/ceza-avukatinin-is-yuku">Ceza avukatının iş yükü: 2025 adalet istatistikleri ne gösteriyor?</a></h3><p>Adalet Bakanlığının 2025 verileriyle avukat sayısı, savcılık ve ceza mahkemesi dosya yükü, görülme süreleri ve iade edilen iddianameler.</p></li>
+<li class="satir"><div class="kunye"><a href="/blog/rehber">Rehber</a><time datetime="2026-05-09">9 Mayıs 2026</time><span>8 dk okuma</span></div><h3><a href="/blog/ceza-dosyasi-lifecycle">Ceza dosyası nasıl yürür? Soruşturmadan hükme savunma rehberi</a></h3><p>Soruşturma, iddianame, duruşma, hüküm ve kanun yolu: her aşamada müdafinin dayandığı CMK maddeleri, uyulması gereken süreler ve yazılan dilekçeler.</p></li>
+</ul>
+</footer>
+<!-- /tiro:yazi-son -->
+</article>
+</main>
+<!-- tiro:alt -->
+<footer class="alt">
+  <div class="kap">
+    <div class="alt-ic">
+      <div class="alt-marka">
+        <a class="marka" href="/"><img src="/assets/tiro_icon.svg" alt="" width="26" height="26">tiro</a>
+        <p>Ceza avukatları için bilgisayarda çalışan yapay zeka. Hukukta yapay zeka ve veri gizliliği üzerine yazılar.</p>
+      </div>
+      <div>
+        <h2>Yazılar</h2>
+        <ul>
+          <li><a href="/blog/gundem">Gündem</a></li>
+          <li><a href="/blog/rehber">Rehber</a></li>
+          <li><a href="/blog/urun-notlari">Ürün notları</a></li>
+          <li><a href="/blog/rss.xml">RSS</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Ürün</h2>
+        <ul>
+          <li><a href="/urun">Nasıl çalışır</a></li>
+          <li><a href="/gizlilik">Gizlilik</a></li>
+          <li><a href="/sss">Sık sorulanlar</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>tiro</h2>
+        <ul>
+          <li><a href="/hakkimizda">Hakkımızda</a></li>
+          <li><a href="/iletisim">İletişim</a></li>
+          <li><a href="/kvkk">KVKK aydınlatma metni</a></li>
+          <li><a href="/kullanim-sartlari">Kullanım şartları</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="alt-yasal">
+      <p>tiro bir hukuk bürosu değildir. Bu sitedeki yazılar genel bilgilendirme amaçlıdır, hukuki mütalaa veya tavsiye yerine geçmez.</p>
+      <span>© 2026 tiro.legal</span>
     </div>
   </div>
-
-  <script src="../js/main.js?v=20260715a"></script>
+</footer>
+<!-- /tiro:alt -->
 </body>
-
 </html>
