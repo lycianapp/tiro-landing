@@ -21,7 +21,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"tiro","url":"https://tiro.legal","inLanguage":"tr-TR"}</script>
 <link rel="preload" href="/assets/fonts/source-serif-4-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/source-sans-3-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/css/site.css?v=c5646d07">
+<link rel="stylesheet" href="/css/site.css?v=422ed6cb">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
 <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
 <link rel="icon" href="/assets/favicon/favicon.ico" sizes="any">
@@ -29,7 +29,7 @@
 <link rel="manifest" href="/assets/favicon/site.webmanifest">
 <link rel="alternate" type="application/rss+xml" title="tiro yazıları" href="/blog/rss.xml">
 <meta name="theme-color" content="#f7f5f0">
-<script src="/js/main.js?v=c5646d07" defer></script>
+<script src="/js/main.js?v=422ed6cb" defer></script>
 <!-- /tiro:bas -->
 </head>
 <body data-bolum="anasayfa">
@@ -72,9 +72,12 @@
 
 <div class="kap">
   <figure class="ekran">
-    <img src="/assets/urun/01-genel.webp" width="1600" height="1000" alt="tiro uygulamasında açık bir dava: solda dosyanın belgeleri, ortada soru kutusu ve geçmiş sohbetler, sağda önizlenen olay yeri inceleme tutanağı.">
-    <figcaption>Kurgusal bir demo dosyası üzerinde tiro.</figcaption>
+    <div class="demo" data-demo></div>
+    <img class="demo-yedek" src="/assets/urun/01-genel.webp" width="1600" height="1000" loading="lazy" alt="tiro uygulamasında açık bir dava: solda dosyanın belgeleri, ortada soru kutusu ve geçmiş sohbetler, sağda önizlenen olay yeri inceleme tutanağı.">
+    <figcaption>Kurgusal bir demo dosyası üzerinde tiro.<span class="demo-ipucu"> Belgeleri ve geçmiş sohbetleri açabilir, cevaptaki kaynağa tıklayabilirsiniz.</span></figcaption>
   </figure>
+  <script src="/js/demo-belgeler.js?v=9ec4fd8a" defer></script>
+  <script src="/js/demo.js?v=9ec4fd8a" defer></script>
 </div>
 
 <section class="bolum" aria-labelledby="son-yazilar">
